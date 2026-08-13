@@ -8,164 +8,289 @@
 :root {
   --bg:#0b1220; --card:#111827; --card2:#1e293b; --line:#334155;
   --txt:#e2e8f0; --mut:#94a3b8; --pl:#1d4ed8; --gold:#fbbf24;
-  --win:#4ade80; --risk:#f87171; --ok:#60a5fa;
+  --win:#4ade80; --risk:#f87171; --ok:#60a5fa; --soft:#0f172a;
 }
 * { box-sizing:border-box; margin:0; padding:0; }
 body {
   font-family: ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--bg); color: var(--txt);
-  line-height: 1.45;
+  background: var(--bg); color: var(--txt); line-height: 1.5;
 }
-.wrap { max-width: 860px; margin: 0 auto; padding: 28px 18px 64px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 22px 72px; }
+.top {
+  display:flex; justify-content:space-between; align-items:flex-end; gap:16px;
+  margin-bottom: 14px; flex-wrap:wrap;
+}
 .kicker { color: var(--gold); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
-h1 { font-size: 28px; line-height: 1.15; margin: 8px 0 6px; }
-.sub { color: var(--mut); font-size: 15px; margin-bottom: 22px; }
+h1 { font-size: 34px; line-height: 1.12; letter-spacing: -.02em; }
+.sub { color: var(--mut); font-size: 15px; max-width: 720px; }
+.live {
+  background:#1e293b; border:1px solid var(--line); border-radius: 999px;
+  padding: 8px 14px; font-size: 13px; color: var(--ok); font-weight: 700; white-space: nowrap;
+}
+.tldr { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin: 22px 0 18px; }
+.fact {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px;
+}
+.fact b { display:block; color: var(--gold); font-size: 11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:4px; }
+.fact span { font-size: 14px; color: var(--txt); }
 .hero {
   background: linear-gradient(180deg, #1e293b 0%, #111827 100%);
-  border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 18px;
+  border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 14px;
 }
-.hero img { width: 100%; height: 280px; object-fit: cover; display: block; }
-.hero-body { padding: 18px 20px 20px; }
-.score { font-size: 26px; font-weight: 800; letter-spacing: .02em; }
+.hero img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.hero-body { padding: 18px 22px 22px; }
+.score { font-size: 30px; font-weight: 800; letter-spacing: .02em; }
 .meta { color: var(--mut); font-size: 13px; margin-top: 4px; }
-.sets { display: flex; gap: 10px; margin: 14px 0 10px; }
+.sets { display: flex; gap: 10px; margin: 14px 0 12px; flex-wrap: wrap; }
 .chip {
   background: #0b1220; border: 1px solid var(--line); border-radius: 12px;
-  padding: 10px 14px; min-width: 78px; text-align: center;
+  padding: 10px 14px; min-width: 82px; text-align: center;
 }
 .chip span { display:block; color: var(--mut); font-size: 11px; }
 .chip b { color: var(--win); font-size: 18px; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
-@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .hero img { height: 200px; } }
+.seven { display:flex; flex-wrap:wrap; gap:6px; margin: 10px 0 8px; }
+.seven i {
+  font-style:normal; background:#0b1220; border:1px solid var(--line); border-radius:999px;
+  padding:4px 10px; font-size:12px; color:#dbeafe;
+}
+.grid2 { display:grid; grid-template-columns: 1.15fr .85fr; gap: 12px; margin: 12px 0; }
+.grid2eq { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.photos { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 12px; }
+.photos img { width:100%; height: 220px; object-fit:cover; border-radius:12px; border:1px solid var(--line); display:block; }
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: 16px;
-  padding: 16px 18px; margin-bottom: 12px;
+  padding: 16px 18px; margin-bottom: 0;
 }
-.card h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-.card h3 { font-size: 18px; margin: 0 0 6px; }
+.card h2 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.card h3 { font-size: 20px; margin: 0 0 6px; }
 .tv { color: var(--ok); font-weight: 700; font-size: 14px; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th { text-align: left; color: var(--mut); font-weight: 600; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 6px; border-bottom: 1px solid var(--line); }
-td { padding: 10px 6px; border-bottom: 1px solid #1f2937; }
-tr.pl td { background: #1d4ed833; font-weight: 700; }
-.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
-.photos img { width: 100%; height: 210px; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); }
 .cap { color: var(--mut); font-size: 12px; margin-top: 4px; }
 .tag {
   display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .08em;
-  text-transform: uppercase; padding: 3px 8px; border-radius: 999px; margin-right: 6px;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle;
 }
 .tag-ok { background: #052e16; color: #4ade80; }
 .tag-med { background: #1e3a5f; color: #93c5fd; }
 .tag-rum { background: #3f1d08; color: #fbbf24; }
-.item { margin: 10px 0; font-size: 14px; color: #dbeafe; }
-.item p { color: var(--txt); margin-top: 3px; }
-.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.up { background: #052e16; border: 1px solid #166534; border-radius: 12px; padding: 12px; }
-.down { background: #450a0a; border: 1px solid #991b1b; border-radius: 12px; padding: 12px; }
-.up h3 { color: #4ade80; font-size: 14px; }
-.down h3 { color: #f87171; font-size: 14px; }
-ul { margin: 8px 0 0 18px; color: var(--txt); font-size: 14px; }
-.five li { margin: 4px 0; }
+.tag-out { background: #3f1212; color: #fca5a5; }
+.tag-in { background: #052e16; color: #86efac; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; color: var(--mut); font-weight: 600; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+td { padding: 10px 6px; border-bottom: 1px solid #1f2937; }
+tr.pl td { background: #1d4ed833; font-weight: 700; }
+.pool { display:flex; flex-wrap:wrap; gap:6px; margin: 8px 0 10px; }
+.pool span { background: var(--card2); border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-size:12px; }
+.pool .home { border-color: var(--gold); color: var(--gold); }
+ul { margin: 8px 0 0 18px; font-size: 14px; }
+li { margin: 4px 0; }
+.item { margin: 8px 0; font-size: 14px; }
+.keys { display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0; }
+.keys span { background:#0b1220; border:1px solid #334155; border-radius:10px; padding:6px 10px; font-size:13px; }
+.typ { color: var(--gold); margin-top: 10px; }
+.up { background: #052e16; border: 1px solid #166534; border-radius: 12px; padding: 12px 14px; }
+.down { background: #450a0a; border: 1px solid #991b1b; border-radius: 12px; padding: 12px 14px; }
+.up h3, .down h3 { font-size: 14px; margin-bottom: 4px; }
+.up h3 { color: #4ade80; }
+.down h3 { color: #f87171; }
+.five { margin: 4px 0 0 20px; }
+.five li { margin: 6px 0; }
+.pills { display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px; }
+.pill { display:inline-block; background:#1e293b; border:1px solid var(--line); border-radius:999px; padding:5px 11px; font-size:12px; color:var(--mut); }
 .footer { color: var(--mut); font-size: 12px; margin-top: 22px; text-align: center; }
-.pill { display:inline-block; background:#1e293b; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:var(--mut); margin-right:6px; }
+.ask { margin-top:10px; font-size:14px; color:#dbeafe; }
+.note { font-size:12px; color:var(--mut); margin-top:10px; }
+@media (max-width: 980px) {
+  .tldr, .grid2, .grid2eq, .photos { grid-template-columns: 1fr; }
+  h1 { font-size: 26px; }
+  .hero img { height: 200px; }
+}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="kicker">Poranny raport · czwartek 13.08.2026</div>
-  <h1>Polska 2–0 w Memoriale. Dziś 18:00 hit z Włochami.</h1>
-  <p class="sub">Koszalin · ostatni test przed EuroVolley (start 21.08). Źródła: Sport.pl, siatka.org, Polsat Sport, FIPAV, Radio PiK.</p>
+  <div class="top">
+    <div>
+      <div class="kicker">Poranny raport · czwartek 13.08.2026</div>
+      <h1>Polska 3:0 z Francją. Dziś 18:00 Włochy.</h1>
+      <p class="sub">Koszalin · ostatni test przed EuroVolley (start 21.08, za 8 dni). Źródła: Polsat Sport, sport.pl, siatka.org, Volleyball World, CEV.</p>
+    </div>
+    <div class="live">Dziś 18:00 POL–ITA · Sport 2 · studio 17:30</div>
+  </div>
+
+  <section class="tldr" aria-label="TL;DR">
+    <div class="fact"><b>Wczoraj</b><span>POL 3:0 FRA (25:18, 28:26, 25:20)</span></div>
+    <div class="fact"><b>Dziś TV</b><span>18:00 ITA, Polsat Sport 2 / Extra 2 / Box Go</span></div>
+    <div class="fact"><b>Memoriał</b><span>POL 6:0 setów · ITA 6:1 po dwóch dniach</span></div>
+    <div class="fact"><b>EuroVolley</b><span>Za 8 dni · Pool A Stambuł · wylot 19.08</span></div>
+    <div class="fact"><b>U17 MŚ</b><span>Po 5–0 w grupie 1:3 z Tajlandią</span></div>
+    <div class="fact"><b>Plaża ME</b><span>W grze tylko Łunio / Kruczek</span></div>
+    <div class="fact"><b>Włochy</b><span>Mistrzynie świata i IO · brąz VNL</span></div>
+    <div class="fact"><b>Studio</b><span>17:30 przed meczem na Sport 2</span></div>
+  </section>
 
   <section class="hero">
-    <img src="../img/hero.jpg" alt="Radość siatkarek reprezentacji Polski w Koszalinie" class="">
+    <img src="../img/hero.svg" alt="Siatkarki reprezentacji Polski w Koszalinie">
     <div class="hero-body">
-      <div class="kicker">Wczoraj · reprezentacja Polski</div>
+      <div class="kicker">Wczoraj · Memoriał · Koszalin</div>
       <div class="score">POLSKA  3 : 0  FRANCJA</div>
-      <div class="meta">12.08.2026 · ~20:30 · Hala Widowiskowo-Sportowa, Koszalin · Memoriał Agaty Mróz-Olszewskiej</div>
+      <div class="meta">12.08.2026 · Koszalin · sport.pl, siatka.org</div>
       <div class="sets">
         <div class="chip"><span>I</span><b>25:18</b></div>
         <div class="chip"><span>II</span><b>28:26</b></div>
         <div class="chip"><span>III</span><b>25:20</b></div>
       </div>
-      <p>Drugi mecz, drugi sweep. Lavarini rotował: przekątna Grabka–Szczurowska. I set od 4:0 do 20:10 po asie Jurczyk. II set: Francja 11:6, seria Piaseckiej z zagrywki, Damaske zbiła setbola, 28:26 po błędzie Ratahiry. III: kontrola, blok Jurczyk i obrony Łysiak.</p>
-      <p class="meta" style="margin-top:10px">Start PL: Szczurowska, Grabka, Orzoł, Piasecka, Jurczyk, Obiała, Łysiak (L) + Damaske, Stefanik. Oficjalnego boxscore’a z punktami brak — bez zgadywania liczb.</p>
+      <p>Drugi mecz, drugi sweep. I i III set pod kontrolą; jedyny opór Francji to 28:26 w drugim. To nadal Francja z Memoriału — nie elita. Oficjalnego boxscore’u indywidualnego PZPS, Polsat i sport.pl nie opublikowały: bez zgadywania punktów.</p>
+      <div class="seven">
+        <i>Szczurowska</i><i>Grabka</i><i>Orzoł</i><i>Piasecka</i><i>Jurczyk</i><i>Obiała</i><i>Łysiak</i>
+      </div>
+      <p class="meta">Siódemka wyjściowa. Źródła: sport.pl, siatka.org.</p>
     </div>
   </section>
 
   <div class="photos">
-    <div><img src="../img/grabka.jpg" alt="Alicja Grabka" class="">
-      <div class="cap">Alicja Grabka — rozegranie vs Francja</div></div>
-    <div><img src="../img/piasecka.jpg" alt="Julita Piasecka" class="">
-      <div class="cap">Julita Piasecka — seria z zagrywki w II secie</div></div>
+    <div>
+      <img src="../img/grabka.svg" alt="Alicja Grabka">
+      <div class="cap">Alicja Grabka — rozegranie w siódemce vs Francja</div>
+    </div>
+    <div>
+      <img src="../img/piasecka.svg" alt="Julita Piasecka">
+      <div class="cap">Julita Piasecka — skrzydło w składzie wyjściowym</div>
+    </div>
   </div>
 
-  <section class="card">
-    <h2>Najbliższy mecz Polski</h2>
-    <h3>Polska vs Włochy</h3>
-    <p>dziś · 13.08.2026 · <b>18:00</b> (Europe/Warsaw) · Koszalin</p>
-    <p class="tv">TV: Polsat Sport 1 · Polsat Sport Extra 2 · Polsat Box Go</p>
-    <p style="margin-top:8px">Stawka: o triumf w Memoriale i ostatni twardy test przed EuroVolley (grupa A, Stambuł; pierwszy mecz 22.08 vs Węgry).</p>
-    <p style="margin-top:8px">Włochy 2–0 (FRA 3:0, UKR 3:1). Polska 2–0 (UKR 3:0, FRA 3:0). Klucz ITA: Egonu, Antropova, Orro, Sylla, Danesi.</p>
-    <p style="margin-top:8px"><span class="tag tag-med">Doniesienie medialne</span> Loveth Omoruyi zniesiona na noszach w II secie vs UA (kolano). Skala urazu niepotwierdzona przez FIPAV.</p>
-    <p style="margin-top:10px;color:var(--gold)"><b>Typ:</b> Włochy faworyt; Polska ugryzie sety. 3:1 albo 3:2 ITA.</p>
-  </section>
+  <div class="grid2">
+    <section class="card">
+      <h2>Dziś · Polska – Włochy</h2>
+      <h3>18:00 Koszalin</h3>
+      <p class="tv">Polsat Sport 2 · Polsat Sport Extra 2 · Polsat Box Go</p>
+      <p class="meta">Studio 17:30. Nie Sport 1 — tam dziś inna relacja live. Źródło: polsatsport.pl, 12.08.</p>
+      <p style="margin-top:10px">To inny test niż Ukraina i Francja. Włochy to mistrzynie świata i igrzysk. 26.07 w Makau wzięły brąz VNL: ITA–CHN 3:1 (25:16, 23:25, 25:22, 25:13), Antropova 26 pkt — Volleyball World.</p>
+      <div class="keys">
+        <span>Zagrywka</span><span>Blok</span><span>Środkowe</span>
+      </div>
+      <p>Klucze dla Polski: jakość serwisu, ściana w środku, czy Jurczyk/Obiała wytrzymają tempo elity. Włochy 2–0 w Memoriale (FRA 3:0, UKR 3:1) — jedyny stracony set to I vs Ukraina.</p>
+      <p class="typ"><b>Typ:</b> Włochy lekkim faworytem. Pięć setów jest realistyczne.</p>
+      <p class="ask">Pytanie na wieczór: która siódemka wygląda najlepiej na elitę — ta z wczoraj, czy Lavarini miesza?</p>
+      <p class="note">Źródła: Polsat Sport, Volleyball World, siatka.org.</p>
+    </section>
 
-  <section class="card">
-    <h2>Memoriał — tabela po 2. dniu</h2>
-    <table>
-      <thead><tr><th>#</th><th>Drużyna</th><th>M</th><th>W</th><th>P</th><th>Pkt</th><th>Sety</th></tr></thead>
-      <tbody>
-        <tr class="pl"><td>1</td><td>Polska</td><td>2</td><td>2</td><td>0</td><td>6</td><td>6:0</td></tr>
-        <tr><td>2</td><td>Włochy</td><td>2</td><td>2</td><td>0</td><td>6</td><td>6:1</td></tr>
-        <tr><td>3</td><td>Francja</td><td>2</td><td>0</td><td>2</td><td>0</td><td>0:6</td></tr>
-        <tr><td>4</td><td>Ukraina</td><td>2</td><td>0</td><td>2</td><td>0</td><td>1:6</td></tr>
-      </tbody>
-    </table>
-    <p class="meta" style="margin-top:10px">Wczoraj: Włochy – Ukraina 3:1 (18:25, 25:14, 25:22, 25:20). Dziś 20:30 Francja – Ukraina (Polsat) — o 3. miejsce. Punktacja 3:0/3:1 = 3 pkt.</p>
-  </section>
+    <section class="card">
+      <h2>Memoriał — tabela po 2 dniach</h2>
+      <table>
+        <thead><tr><th>#</th><th>Drużyna</th><th>M</th><th>W</th><th>P</th><th>Sety</th></tr></thead>
+        <tbody>
+          <tr class="pl"><td>1</td><td>Polska</td><td>2</td><td>2</td><td>0</td><td>6:0</td></tr>
+          <tr><td>2</td><td>Włochy</td><td>2</td><td>2</td><td>0</td><td>6:1</td></tr>
+          <tr><td>3</td><td>Francja</td><td>2</td><td>0</td><td>2</td><td>0:6</td></tr>
+          <tr><td>4</td><td>Ukraina</td><td>2</td><td>0</td><td>2</td><td>1:6</td></tr>
+        </tbody>
+      </table>
+      <p class="meta" style="margin-top:10px">POL–UKR 3:0 (25:17, 25:19, 25:20) — nie 3:1. ITA–FRA 3:0 (25:15, 25:22, 25:13). ITA–UKR 3:1 (18:25, 25:14, 25:22, 25:20).</p>
+      <p style="margin-top:10px"><span class="tag tag-med">Doniesienie medialne</span> Loveth Omoruyi zniesiona na noszach vs Ukraina. Brak diagnozy FIPAV — nie podajemy skali urazu.</p>
+    </section>
+  </div>
 
-  <section class="card">
-    <h2>Doniesienia, newsy, plotki</h2>
-    <div class="item"><span class="tag tag-ok">Potwierdzone</span><p>#VolleyWrocław przedłużył kontrakt Sary Wąsiakowskiej (9.08, klub).</p></div>
-    <div class="item"><span class="tag tag-ok">Potwierdzone</span><p>Sokół Mogilno ruszył z przygotowaniami (12 krajowych + 3 zagraniczne w drodze), trener Dawid Michor. Prezes po treningu: na ten moment nic nie wskazuje, że nie wystartują (Radio PiK).</p></div>
-    <div class="item"><span class="tag tag-med">Doniesienie medialne</span><p>Loveth Omoruyi — kontuzja kolana, nosze (OA Sport / siatka.org). Bez diagnozy FIPAV.</p></div>
-    <div class="item"><span class="tag tag-med">Doniesienie medialne</span><p>Sokół: starosta złożył wniosek o kuratora dla stowarzyszenia. Licencja 26/27 nie jest publicznie domknięta.</p></div>
-    <div class="item"><span class="tag tag-rum">Plotka</span><p>Helena Gilson (BEL) nadal w kolumnie „w kręgu zainteresowań’ Wrocławia na siatka.org. Volleybox pokazuje ją w Beveren na 26/27.</p></div>
-    <div class="item"><span class="tag tag-rum">Plotka</span><p>Antonia Stautz → Wrocław: prasa DE + karuzela, bez komunikatu klubu.</p></div>
-    <p class="meta">Polki za granicą: bez świeżego wydarzenia meczowego. Stysiak w kadrze (wczoraj na ławce vs FRA). Łukasik poza ME — bez nowego komunikatu od 07.08.</p>
-  </section>
+  <div class="grid2eq" style="margin-top:12px">
+    <section class="card">
+      <h2>EuroVolley · odliczanie</h2>
+      <h3>21.08 – 6.09 · za 8 dni</h3>
+      <p>Pool A, Stambuł: Turcja, Łotwa, Polska, Niemcy, Słowenia, Węgry.</p>
+      <div class="pool">
+        <span class="home">TUR</span><span>LAT</span><span class="home">POL</span><span>GER</span><span>SLO</span><span>HUN</span>
+      </div>
+      <p>Pierwszy mecz: Polska – Węgry, 22.08, 19:00 czasu lokalnego = <b>18:00 Warszawa</b>. Wylot kadry: 19.08.</p>
+      <p style="margin-top:8px">VNL 2026: Polska 8. miejsce fazy wstępnej, 7–5, 20 pkt meczowych. Do Final 8 nie weszła — Chiny 9. (6–6) dostały slot gospodarza. Źródło: CEV / VW.</p>
+    </section>
 
-  <section class="card">
-    <h2>Polska zawodniczka pod lupą</h2>
-    <h3>Julia Szczurowska · atakująca</h3>
-    <p>Wczoraj pierwsze skrzydło przy Grabce. Sport.pl: punktowała z ataku i bloku, Francja nie miała pomysłu. Oficjalnych punktów z tego meczu brak.</p>
-    <p style="margin-top:8px">Dlaczego teraz: Lavarini testuje ją jako realną nr 2 / zmienniczkę Stysiak przed ME. Dziś vs Włochy pokaże, czy to forma, czy tylko Francja.</p>
-  </section>
+    <section class="card">
+      <h2>U17 MŚ · 1/8 finału</h2>
+      <h3>Polska 1:3 Tajlandia</h3>
+      <p>Po grupie 5–0 (sety 15:3) przyszedł zimny prysznic. R16: 19:25, 21:25, 25:10, 23:25.</p>
+      <div class="sets">
+        <div class="chip"><span>I</span><b>19:25</b></div>
+        <div class="chip"><span>II</span><b>21:25</b></div>
+        <div class="chip"><span>III</span><b>25:10</b></div>
+        <div class="chip"><span>IV</span><b>23:25</b></div>
+      </div>
+      <p>VW: Lange 16, Jakubowska 13, Wika 12. Po drugiej stronie Ajchua 25. Czwartek — dzień wolny, bez kolejnego meczu.</p>
+      <p class="note">Źródło: Volleyball World. Nie mylić z innymi parami 1/8.</p>
+    </section>
+  </div>
 
-  <div class="cols">
-    <div class="up"><h3>↑ Pozytywne</h3><ul><li>Polska 2× 3:0 w Koszalinie</li><li>Szczurowska w rytmie ataku</li><li>Blok Jurczyk + obrona Łysiak</li></ul></div>
-    <div class="down"><h3>↓ Ryzyka</h3><ul><li>Dziś Włochy = inna półka</li><li>Bez Łukasik na EuroVolley</li><li>Sokół Mogilno: licencja / finanse</li></ul></div>
+  <div class="grid2eq" style="margin-top:12px">
+    <section class="card">
+      <h2>EuroBeachVolley · Stare Jabłonki</h2>
+      <h3>W grze jedna para</h3>
+      <p><span class="tag tag-in">W grze</span> Łunio / Kruczek: 0:2 Lazarenko/Kurnikova UA (11:21, 14:21), potem 2:0 Vergara/González ES (21:17, 21:12).</p>
+      <p style="margin-top:8px"><span class="tag tag-out">Poza turniejem</span> Jundziłł/Jaroszczak · Kropidłowska/Łodej · Michalska/Okła · Kielak/Kudlik.</p>
+      <p class="tv" style="margin-top:10px">TV dziś od 8:55: Polsat Sport Extra 3 + Polsat Box Go</p>
+      <p class="note">Źródła: CEV / Polsat Sport.</p>
+    </section>
+
+    <section class="card">
+      <h2>TAURON Liga · przedsezon</h2>
+      <h3>Tabeli nie ma — i nie będzie do października</h3>
+      <p>Superpuchar AL-KO: <b>24.10.2026, 14:45</b>, Częstochowa — Budowlani – DevelopRes.</p>
+      <p style="margin-top:8px"><span class="tag tag-ok">Potwierdzone</span> #VolleyWrocław przedłużył kontrakt Sary Wąsiakowskiej (9.08, klub).</p>
+      <p class="meta" style="margin-top:8px">Kontekst, nie news z ostatnich 72 h: Jurczyk → ŁKS, ogłoszenie 29–30.07.</p>
+      <p class="item" style="margin-top:10px"><span class="tag tag-rum">Plotka</span> Gilson (BEL) w kolumnie „w kręgu zainteresowań” Wrocławia na siatka.org; Volleybox trzyma ją w Beveren. Stautz → Wrocław: prasa DE, bez komunikatu klubu.</p>
+    </section>
+  </div>
+
+  <div class="grid2eq" style="margin-top:12px">
+    <section class="card">
+      <h2>Pod lupą · test na dziś</h2>
+      <h3>Weronika Jurczyk · środkowa</h3>
+      <p>Wczoraj w siódemce vs Francja. Dziś prawdziwy egzamin: blok i tempo na Włoszkach. Jeśli ściana w środku nie złapie rytmu, Polska odda inicjatywę już w przyjęciu.</p>
+      <p class="meta" style="margin-top:8px">Transfer do ŁKS — ogłoszony 29–30.07, tu tylko tło klubowe, nie news dnia.</p>
+    </section>
+    <section class="card">
+      <h2>Zawodniczka ostatnich 24 h</h2>
+      <h3>Julia Szczurowska · skrzydło</h3>
+      <p>Pierwsze skrzydło przy Grabce. Sport.pl: punktowała z ataku i bloku, Francja nie miała pomysłu. Oficjalnych punktów z tego meczu brak — nie dopisujemy boxscore’u.</p>
+      <p style="margin-top:8px">Lavarini sprawdza ją jako realną opcję na elitę. Dziś vs Włochy widać, czy to forma, czy tylko Francja.</p>
+    </section>
+  </div>
+
+  <div class="grid2eq" style="margin-top:12px">
+    <div class="up">
+      <h3>Forma / plusy</h3>
+      <ul>
+        <li>Polska 2× 3:0, sety 6:0 — czyste konto w Memoriale</li>
+        <li>Siódemka z wczoraj dostała minuty bez eksperymentu na siłach</li>
+        <li>U17: grupa 5–0 zanim wpadła Tajlandia</li>
+        <li>Łunio/Kruczek jeszcze w ME plażowych u siebie</li>
+      </ul>
+    </div>
+    <div class="down">
+      <h3>Ryzyka / minusy</h3>
+      <ul>
+        <li>Włochy = mistrzynie świata i IO, nie Francja</li>
+        <li>VNL: 8. miejsce, Final 8 uciekł przez slot Chin</li>
+        <li>U17 odpadły 1:3 po dominacji w grupie</li>
+        <li>Cztery z pięciu par plażowych już poza turniejem</li>
+      </ul>
+    </div>
   </div>
 
   <section class="card" style="margin-top:12px">
     <h2>5 rzeczy na dziś</h2>
     <ol class="five">
-      <li>Polska – Francja 3:0, drugi sweep z rzędu</li>
-      <li>Dziś 18:00 Polska – Włochy o memoriał (Polsat)</li>
-      <li>Omoruyi zniesiona na noszach — doniesienie, bez diagnozy FIPAV</li>
-      <li>EuroVolley za 8 dni, bez Łukasik</li>
-      <li>Sokół trenuje, licencja/finanse nadal otwarte</li>
+      <li>POL–FRA 3:0, drugi sweep; boxscore indywidualny nieopublikowany.</li>
+      <li>18:00 POL–ITA, Koszalin, Polsat Sport 2 + Extra 2 + Box Go, studio 17:30.</li>
+      <li>Włochy lekkim faworytem; pięć setów realistyczne. Klucz: zagrywka, blok, środkowe.</li>
+      <li>U17 po 5–0 w grupie 1:3 z Tajlandią (Lange 16, Jakubowska 13, Wika 12). Dziś pauza.</li>
+      <li>EuroVolley za 8 dni, Pool A Stambuł, pierwszy mecz HUN 22.08 18:00 Warszawa; wylot 19.08.</li>
     </ol>
-    <p style="margin-top:12px">
-      <span class="pill">Zawodniczka dnia: Szczurowska</span>
-      <span class="pill">Mecz dnia: POL–FRA 3:0</span>
-      <span class="pill">Niespodzianka: UA wzięła I set Włochom</span>
-    </p>
-    <p style="margin-top:12px"><b>Na co patrzeć:</b> 18:00 Polska – Włochy (typ 3:1/3:2 ITA) · 20:30 Francja – Ukraina</p>
+    <div class="pills">
+      <span class="pill">Mecz dnia: POL–ITA 18:00</span>
+      <span class="pill">Zawodniczka 24 h: Szczurowska</span>
+      <span class="pill">Test: blok Jurczyk</span>
+      <span class="pill">Plaża: Extra 3 od 8:55</span>
+    </div>
   </section>
 
-  <p class="footer">Raport na 13.08.2026, rano Europe/Warsaw · bez zgadywania statystyk · plotki oddzielone od faktów</p>
+  <p class="footer">Raport na 13.08.2026, rano Europe/Warsaw · tylko fakty z paczki · plotki oddzielone od potwierdzeń · productroot.io/siatkowka</p>
 </div>
 </body>
 </html>
