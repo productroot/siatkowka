@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang='pl'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Poranny raport siatkówki · 15.08.2026</title>
+<style>
+:root { --bg:#0b1220; --card:#111827; --card2:#1e293b; --line:#334155; --txt:#e2e8f0; --mut:#94a3b8; --pl:#1d4ed8; --gold:#fbbf24; --win:#4ade80; --risk:#f87171; --ok:#60a5fa; --soft:#0f172a; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family: ui-sans-serif, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--txt); line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 28px 22px 72px; }
+.top { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom: 14px; flex-wrap:wrap; }
+.kicker { color: var(--gold); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
+h1 { font-size: 34px; line-height: 1.12; letter-spacing: -.02em; }
+.sub { color: var(--mut); font-size: 15px; max-width: 760px; }
+.live { background:#1e293b; border:1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: 13px; color: var(--ok); font-weight: 700; white-space: nowrap; }
+.tldr { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin: 22px 0 18px; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.fact b { display:block; color: var(--gold); font-size: 11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:4px; }
+.fact span { font-size: 14px; color: var(--txt); }
+.hero { background: linear-gradient(180deg, #1e293b 0%, #111827 100%); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 14px; }
+.hero img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.hero-body { padding: 18px 22px 22px; }
+.score { font-size: 30px; font-weight: 800; letter-spacing: .02em; }
+.score .won { color: var(--win); }
+.score .lost { color: var(--risk); }
+.meta { color: var(--mut); font-size: 13px; margin-top: 4px; }
+.sets { display: flex; gap: 10px; margin: 14px 0 12px; flex-wrap: wrap; }
+.chip { background: #0b1220; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; min-width: 82px; text-align: center; }
+.chip span { display:block; color: var(--mut); font-size: 11px; }
+.chip b { color: var(--win); font-size: 18px; }
+.chip.lost b { color: var(--risk); }
+.seven { display:flex; flex-wrap:wrap; gap:6px; margin: 10px 0 8px; }
+.seven i { font-style:normal; background:#0b1220; border:1px solid var(--line); border-radius:999px; padding:4px 10px; font-size:12px; color:#dbeafe; }
+.quote { border-left: 3px solid var(--gold); padding: 8px 12px; margin: 10px 0; color: #dbeafe; font-size: 14px; background: #0b1220; border-radius: 0 10px 10px 0; }
+.grid2 { display:grid; grid-template-columns: 1.15fr .85fr; gap: 12px; margin: 12px 0; }
+.grid2eq { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.photos { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 12px; }
+.photos img { width:100%; height: 220px; object-fit:cover; border-radius:12px; border:1px solid var(--line); display:block; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin-bottom: 0; }
+.card h2 { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.card h3 { font-size: 20px; margin: 0 0 6px; }
+.tv { color: var(--ok); font-weight: 700; font-size: 14px; }
+.cap { color: var(--mut); font-size: 12px; margin-top: 4px; }
+.tag { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
+.tag-ok { background: #052e16; color: #4ade80; }
+.tag-med { background: #1e3a5f; color: #93c5fd; }
+.tag-rum { background: #3f1d08; color: #fbbf24; }
+.tag-out { background: #3f1212; color: #fca5a5; }
+.tag-in { background: #052e16; color: #86efac; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; color: var(--mut); font-weight: 600; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+td { padding: 10px 6px; border-bottom: 1px solid #1f2937; }
+tr.pl td { background: #1d4ed833; font-weight: 700; }
+.pool { display:flex; flex-wrap:wrap; gap:6px; margin: 8px 0 10px; }
+.pool span { background: var(--card2); border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-size:12px; }
+.pool .home { border-color: var(--gold); color: var(--gold); }
+ul { margin: 8px 0 0 18px; font-size: 14px; }
+li { margin: 4px 0; }
+.item { margin: 8px 0; font-size: 14px; }
+.keys { display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0; }
+.keys span { background:#0b1220; border:1px solid #334155; border-radius:10px; padding:6px 10px; font-size:13px; }
+.typ { color: var(--gold); margin-top: 10px; }
+.up { background: #052e16; border: 1px solid #166534; border-radius: 12px; padding: 12px 14px; }
+.down { background: #450a0a; border: 1px solid #991b1b; border-radius: 12px; padding: 12px 14px; }
+.up h3, .down h3 { font-size: 14px; margin-bottom: 4px; }
+.up h3 { color: #4ade80; }
+.down h3 { color: #f87171; }
+.five { margin: 4px 0 0 20px; }
+.five li { margin: 6px 0; }
+.pills { display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px; }
+.pill { display:inline-block; background:#1e293b; border:1px solid var(--line); border-radius:999px; padding:5px 11px; font-size:12px; color:var(--mut); }
+.footer { color: var(--mut); font-size: 12px; margin-top: 22px; text-align: center; }
+.ask { margin-top:10px; font-size:14px; color:#dbeafe; }
+.note { font-size:12px; color:var(--mut); margin-top:10px; }
+p { margin: 0; }
+p + p { margin-top: 8px; }
+a { color: #93c5fd; }
+@media (max-width: 980px) { .tldr, .grid2, .grid2eq, .photos { grid-template-columns: 1fr; } h1 { font-size: 26px; } .hero img { height: 200px; } }
+</style>
+</head>
+<body>
+<div class='wrap'>
+<div class='top'>
+<div>
+<div class='kicker'>Poranny raport · sobota 15.08.2026</div>
+<h1>U17 3:0 z Wenezuelą. Bliżej 9. miejsca.</h1>
+<p class='sub'>Chile, noc z piątku na sobotę · klasyfikacja 9–16. Seniorki: 6 dni do EuroVolley, wylot 19.08. Źródła: siatka.org, Volleyball World, Polsat Sport, CEV, satkurier.pl, sportoweswiecie.pl.</p>
+</div>
+<div class='live'>Dziś / noc: U17 POL–JPN 02:00 · plaże od 10:45 Sport 2</div>
+</div>
+<section class='tldr' aria-label='TL;DR'>
+<div class='fact'><b>Nocą U17</b><span>POL 3:0 VEN (25:8, 25:21, 25:16)</span></div>
+<div class='fact'><b>Następny U17</b><span>POL–JPN 20:00 Chile = 02:00 niedziela, Warszawa</span></div>
+<div class='fact'><b>Punkty</b><span>Jakubowska 11 · Derczyńska 11 (4 asy w III)</span></div>
+<div class='fact'><b>EuroVolley</b><span>Za 6 dni · wylot 19.08 · HUN 22.08 18:00</span></div>
+<div class='fact'><b>Memoriał</b><span>Zamknięty: ITA 1. · POL 2. · FRA 3:2 UKR</span></div>
+<div class='fact'><b>Plaża ME</b><span>0 polskich par w grze · TV od 10:45</span></div>
+<div class='fact'><b>Klub Lavarini</b><span>Vero Volley Milano: rozwiązanie kontraktu</span></div>
+<div class='fact'><b>TV dziś</b><span>Plaża: Sport 2 / Extra 3 / Box Go od 10:45</span></div>
+</section>
+<section class='hero'>
+<img src='../img/u17.svg' alt='Reprezentacja Polski U17 kobiet na mistrzostwach świata w Chile'>
+<div class='hero-body'>
+<div class='kicker'>Nocą · MŚ U17 · Chile · miejsca 9–16</div>
+<div class='score'>POLSKA  <span class='won'>3 : 0</span>  WENEZUELA</div>
+<div class='meta'>Piątek 14.08.2026, 23:00 czasu polskiego · mecz trwał niespełna godzinę · siatka.org (15.08, 09:14)</div>
+<div class='sets'>
+<div class='chip'><span>I</span><b>25:8</b></div>
+<div class='chip'><span>II</span><b>25:21</b></div>
+<div class='chip'><span>III</span><b>25:16</b></div>
+</div>
+<p><span class='tag tag-ok'>Potwierdzone</span> Po 1:3 z Tajlandią w 1/8 finału (12.08) Polki weszły w klasyfikację 9–16 i w nocy rozbiły Wenezuelę. siatka.org: Wenezuela – Polska 0:3 (8:25, 21:25, 16:25). Volleyball World w recenzji piątku (opubl. 15.08, 03:30) ustawia Polskę na sobotę z Japonią, a Wenezuelę z Filipinami — to niezależne potwierdzenie, że to Polki wygrały.</p>
+<p style='margin-top:10px'>I set: ponad 15 minut, trzy asy kapitan Aleksandry Wiki, blok Gabrieli Jakubowskiej. Wenezuela „zupełnie nie weszła w mecz” i sypała błędami — siatka.org. 25:8.</p>
+<p style='margin-top:8px'>II: punktowo ciaśniej, bo Polki same rozdawały prezenty. Wika zeszła, weszła Hanna Derczyńska. Ofensywa Derczyńska + Jakubowska, dołożyły Bladocha/Lange. 25:21.</p>
+<p style='margin-top:8px'>III: Derczyńska czterema asami rozmontowała przyjęcie. Dwa asy dołożyła Hanna Jurasz. Atak Polek znów nie kończył, ale to nie wystarczyło Wenezueli. 25:16. Całość poniżej godziny.</p>
+<div class='seven'>
+<i>Wika 6</i><i>Bladocha 4</i><i>Jucha 4</i><i>Przybyłkowicz 6</i><i>Lange 7</i><i>Jakubowska 11</i><i>Szymczyk (L)</i>
+</div>
+<p class='meta'>Z ławki: Derczyńska 11, Majchrowicz 2, Karsznia, Różańska, Jurasz, Galas (L). Wenezuela: Colina 6, Pacheco 6, Salas 4, Zerpa 3. Źródło punktów: siatka.org. Karty VIS Volleyball World nie wczytuje się bez JS — nie dopisujemy liczb spoza relacji.</p>
+<p class='note'>PZPS.pl rano 15.08 wciąż eksponuje porażkę 1:3 z Tajlandią i mecz chłopców U17 z Włochami. Wyniku POL–VEN federacja na stronie głównej jeszcze nie ma.</p>
+</div>
+</section>
+<div class='grid2'>
+<section class='card'>
+<h2>U17 · co dalej</h2>
+<h3>Dziś w nocy: Polska – Japonia</h3>
+<p><span class='tag tag-ok'>Potwierdzone</span> Volleyball World, 15.08 03:30: sobotni program klasyfikacji — Polska vs Japonia, Chile vs Portoryko i Brazylia vs Hiszpania o <b>20:00 czasu lokalnego</b>. Przy mapowaniu piątkowego 23:00 Warszawa = 17:00 Chile (CLT, UTC−4) wychodzi <b>02:00 niedziela 16.08, Warszawa</b>.</p>
+<p style='margin-top:8px'>Japonia odpadła w R16 z Turcją 1:3 (VW, recenzja 1/8). To mecz o miejsca 9–12. Wenezuela o 14:00 Chile gra z Filipinami — ścieżka 13–16.</p>
+<p class='tv' style='margin-top:10px'>Kanału TV na POL–JPN Polsat rano nie podał. Nie zgadujemy. Volleyball World streamuje MŚ na YouTube.</p>
+<p class='meta' style='margin-top:8px'>Kontekst R16: POL 1:3 THA (19:25, 21:25, 25:10, 23:25). VW: Lange 16, Jakubowska 13, Wika 12; Ajchua 25. Grupa C: 5–0, sety 15:3.</p>
+<p class='ask'>Cel po odpadnięciu z medalowej drabinki jest jasny: dziewiąte miejsce. Nocny 3:0 to reset, nie rewanż za Tajlandię.</p>
+</section>
+<section class='card'>
+<h2>MŚ U17 · piątek w Chile</h2>
+<h3>Final Four bez Polek</h3>
+<p>Ćwierćfinały (VW, 15.08): USA 3:0 ITA (25:10, 25:15, 26:24) — Knotts 19, w tym 6 asów. TUR 3:1 KOR (21:25, 27:25, 25:22, 25:17). CHN 3:2 CRO. TPE 3:2 THA — Ajchua 32, Chang 25.</p>
+<p style='margin-top:8px'>Półfinały dziś: USA–CHN 17:00 Chile, TPE–TUR 20:00, National Stadium Park, Santiago.</p>
+<p class='note'>To kontekst, nie polski mecz. Polki grają równolegle o 9.–12. miejsce.</p>
+</section>
+</div>
+<div class='photos'>
+<div>
+<img src='../img/grabka.svg' alt='Alicja Grabka'>
+<div class='cap'>Alicja Grabka — Koszalin, zmiana vs Włochy. Do Stambułu wylot 19.08</div>
+</div>
+<div>
+<img src='../img/piasecka.svg' alt='Julita Piasecka'>
+<div class='cap'>Julita Piasecka — „próbuję zbierać doświadczenie nawet z takich porażek”</div>
+</div>
+</div>
+<div class='grid2'>
+<section class='card'>
+<h2>Seniorki · po Koszalinie</h2>
+<h3>Lekcja z Włochami, 6 dni do ME</h3>
+<p><span class='tag tag-ok'>Potwierdzone</span> Memoriał Agaty Mróz-Olszewskiej zakończony 13.08. Polska 0:3 Włochy (16:25, 21:25, 20:25). Włochy wygrały turniej. Polska 2. Francja – Ukraina 3:2 (25:20, 17:25, 19:25, 25:19, 15:10) o trzecie miejsce — Polsat Sport, WP SportoweFakty. POL–UKR w grupie było <b>3:0</b>, nie 3:1.</p>
+<p style='margin-top:8px'>sportoweswiecie.pl (14.08): atak Polski vs Włochy <b>26%</b> przy <b>49%</b> Italii, blok <b>3–12</b>. Oficjalnego boxscore’u PZPS/Polsat nadal nie ma — te dwie liczby bierzemy z tej relacji, nie z VIS.</p>
+<div class='quote'>„Szczerze mówiąc, myślę, że podeszliśmy do rywalek ze zbyt dużym respektem. Za bardzo skupialiśmy się na tym, co dzieje się po drugiej stronie siatki.” — Stefano Lavarini, Polsat Sport, 14.08</div>
+<div class='quote'>„Największą różnicą była nasza gra w defensywie. (…) Mamy za to znakomity materiał do nauki.” — Lavarini, tamże</div>
+<div class='quote'>„Jedna różnica, która najbardziej rzucała się w oczy, to dynamika w ataku. (…) Możemy wygrywać walecznością i rozwiązaniami technicznymi.” — Julia Szczurowska, Polsat / siatka.org, 14.08</div>
+<p class='note'>Nowego meczu seniorskiego nie było. Nie naciągamy relacji. Kadra 14-osobowa na ME: Radio Koszalin zapowiadało ogłoszenie po Koszalinie — do rana 15.08 nie znaleźliśmy komunikatu PZPS.</p>
+</section>
+<section class='card'>
+<h2>EuroVolley · odliczanie</h2>
+<h3>21.08 – 6.09 · za 6 dni</h3>
+<p>Pool A, Stambuł, Sinan Erdem: Turcja, Łotwa, Polska, Niemcy, Słowenia, Węgry.</p>
+<div class='pool'>
+<span class='home'>TUR</span><span>LAT</span><span class='home'>POL</span><span>GER</span><span>SLO</span><span>HUN</span>
+</div>
+<p>Pierwszy mecz: Węgry – Polska, 22.08, 19:00 Istanbul = <b>18:00 Warszawa</b>. CEV (WFA-03). TV: <b>Polsat Sport 1</b> — satkurier.pl (aktualizacja 09.08, plan z Polsat Sport).</p>
+<p style='margin-top:8px'><span class='tag tag-ok'>Potwierdzone</span> Wylot: <b>19.08</b> do Stambułu. Polsat Sport, 14.08 — Lavarini o Memoriale. Nie znaleźliśmy korekty.</p>
+<p style='margin-top:8px'>Dalej w grupie (godziny Warszawa, satkurier / Polsat): Łotwa 24.08 15:00 Sport 1 · Słowenia 25.08 18:00 Sport 1 · Niemcy 27.08 15:00 Sport 1 · Turcja 28.08 18:00 Sport 1.</p>
+<p class='meta' style='margin-top:8px'>VNL 2026: Polska 8. miejsce fazy wstępnej, 7–5. Do Final 8 nie weszła (slot gospodarza Chin). Volleyball World.</p>
+<p class='ask'>Lavarini: dwa piąte miejsca w poprzednich ME, kadra przebudowana, „nie ma co nakładać dodatkowej presji”. Cel: znaleźć drogę mecz po meczu, nie myśleć kategorialnie o Węgrzech vs Turcji.</p>
+</section>
+</div>
+<div class='grid2eq' style='margin-top:12px'>
+<section class='card'>
+<h2>EuroBeachVolley · Stare Jabłonki</h2>
+<h3>Polskie pary: 0 w grze. Dziś półfinały kobiet</h3>
+<p><span class='tag tag-out'>Poza turniejem</span> Wszystkie pięć par kobiet poza ME od 13.08. Ostatnie: Łunio/Kruczek 0:2 z Paulikiene/Raupelyte (LTU), 15:21, 11:21. ESKA, siatka.org. Dzień 1: cztery duety po dwóch porażkach grupowych.</p>
+<p style='margin-top:8px'>Mężczyźni (skrót, bo nikt nie gra): Bryl/Łosiak odpadli 13.08 0:2 z Sagstetter/Winter (GER), 18:21, 14:21. Polsat Sport. Od czwartku w drabince nie ma Polaków.</p>
+<p class='tv' style='margin-top:10px'>TV dziś od <b>10:45</b>: Polsat Sport 2 — studio, potem ćwierćfinały mężczyzn 10:55 / 12:10 / 15:55 / 17:10 i półfinały kobiet 13:25 / 14:40. teleman.pl, program 15.08. Extra 3 + Box Go: sport-tour.pl. Studio: Tomasz Krochmal (Wirtualne Media / Polsat). Finały niedziela 16.08.</p>
+<p class='note'>Źródła: CEV / Polsat / teleman / ESKA. Bez polskich par — transmisja zostaje dla reszty turnieju i biletów do LA 2028.</p>
+</section>
+<section class='card'>
+<h2>TAURON Liga · przedsezon</h2>
+<h3>Tabeli nie ma. Superpuchar 24.10</h3>
+<p>Superpuchar AL-KO: <b>24.10.2026, 14:45</b>, Hala Sportowa Częstochowa — PGE Budowlani Łódź vs KS DevelopRes Rzeszów. tauronliga.pl / PLS.</p>
+<p class='item' style='margin-top:10px'><span class='tag tag-med'>Doniesienie medialne</span> siatka.org (14.08): Antonina Stautz (GER) ma dołączyć do #Volley Wrocław na przyjęcie, obok Garncarz, Frankevych i Szczyrby. Bez komunikatu klubu na tauronliga.pl — nie podnosimy do „potwierdzone”.</p>
+<p class='item' style='margin-top:8px'><span class='tag tag-ok'>Potwierdzone</span> Julia Nowicka przedłużyła kontrakt z Gerdau/Minas (BRA). siatka.org, 12.08 — świeże, ale nie z ostatniej nocy. W Superlidze będzie też Magdalena Stysiak (Osasco).</p>
+<p class='meta' style='margin-top:8px'>Bez recyklingu lipcowych transferów jako newsa dnia. Sezon ligowy kobiet jeszcze nie wystartował.</p>
+</section>
+</div>
+<div class='grid2eq' style='margin-top:12px'>
+<section class='card'>
+<h2>Plotki i kluby · oddzielone</h2>
+<h3>Lavarini bez Mediolanu. Kadra zostaje</h3>
+<p><span class='tag tag-ok'>Potwierdzone</span> Numia Vero Volley Milano rozwiązało kontrakt ze Stefano Lavarini za porozumieniem stron. Komunikat klubu + tweet @VeroVolley, 14.08. Z klubem odchodzą asystent Andrea Mafrici i statystyk Kacper Duda (ten sam, co przy kadrze). Następca w Mediolanie: Gianlorenzo Blengini. siatka.org.</p>
+<p class='item' style='margin-top:8px'><span class='tag tag-rum'>Plotka</span> Powrót Lavariniego do Fenerbahçe Medicana — „już od pewnego czasu się mówi”. siatka.org, bez klubu z Stambułu. To nie zwolnienie z kadry Polski.</p>
+<p class='item' style='margin-top:8px'><span class='tag tag-ok'>Potwierdzone</span> Loveth Omoruyi (ITA): zerwanie ACL kolana lewego + uszkodzenia pobocznego i łąkotki, operacja, bez EuroVolley. Kontuzja 12.08 vs Ukraina w Koszalinie. siatka.org 14.08, volleyball.it, LaPresse / FIPAV.</p>
+</section>
+<section class='card'>
+<h2>Pod lupą / zawodniczka 24 h</h2>
+<h3>Gabriela Jakubowska · Hanna Derczyńska</h3>
+<p><b>Pod lupą:</b> Jakubowska — 11 punktów, start, środek, który w I secie trzymał mecz, a po Tajlandii (13 pkt w R16, VW) znów była najskuteczniejsza w siódemce.</p>
+<p style='margin-top:8px'><b>Zawodniczka nocy:</b> Hanna Derczyńska. Weszła za Wikę, 11 punktów, w III secie cztery asy. To zmiana, która zamknęła mecz. siatka.org nie podaje % ataku — nie wymyślamy.</p>
+<p class='meta' style='margin-top:8px'>Seniorski „gracz 24 h” nie wchodzi: nie było meczu. Szczurowska dała diagnozę na kamerę, Damaske zostaje lekcją z Koszalina.</p>
+</section>
+</div>
+<div class='grid2eq' style='margin-top:12px'>
+<div class='up'>
+<h3>Forma / plusy</h3>
+<ul>
+<li>U17: po wpadce z Tajlandią natychmiastowy 3:0, set 25:8, mecz &lt; 60 min</li>
+<li>Ławka U17 działa — Derczyńska 11, asy Jurasz</li>
+<li>Seniorki: dwa sweepy w Koszalinie zostają w banku (UKR, FRA)</li>
+<li>Wylot 19.08 i TV HUN–POL (Sport 1) potwierdzone na 14.08</li>
+</ul>
+</div>
+<div class='down'>
+<h3>Ryzyka / minusy</h3>
+<ul>
+<li>Seniorki: 26% ataku i 3 bloki vs Włochy (sportoweswiecie.pl)</li>
+<li>U17: Tajlandia wciąż jest ostatnim meczem o stawkę medalową</li>
+<li>Plaża u siebie: 10/10 par poza ME przed 1/8</li>
+<li>14-osobowa kadra ME nieogłoszona publicznie do rana 15.08</li>
+</ul>
+</div>
+</div>
+<section class='card' style='margin-top:12px'>
+<h2>5 rzeczy na dziś</h2>
+<ol class='five'>
+<li>U17 POL 3:0 VEN (25:8, 25:21, 25:16). Jakubowska 11, Derczyńska 11. siatka.org; para na dziś z Volleyball World.</li>
+<li>Dziś w nocy 02:00 Warszawa: POL–JPN o 9.–12. miejsce. 20:00 Chile. TV niepotwierdzone.</li>
+<li>Seniorki bez meczu. EuroVolley za 6 dni, wylot 19.08, HUN 22.08 18:00 Sport 1. Lavarini: za duży respekt vs Włochy, materiał do nauki w defensywie.</li>
+<li>Plaża: zero Polek i Polaków w drabince. TV od 10:45 Sport 2 — półfinały kobiet, ćwierćfinały mężczyzn.</li>
+<li>Lavarini bez Vero Volley Milano (klub, 14.08). Fenerbahçe = plotka. Omoruyi poza ME Włoch — ACL po Koszalinie.</li>
+</ol>
+<div class='pills'>
+<span class='pill'>Mecz dnia: U17 POL–JPN 02:00</span>
+<span class='pill'>Zawodniczka nocy: Derczyńska</span>
+<span class='pill'>Odliczanie: 6 dni do ME</span>
+<span class='pill'>Plaża TV: Sport 2 od 10:45</span>
+</div>
+</section>
+<p class='footer'>Raport na 15.08.2026, rano Europe/Warsaw · tylko zweryfikowane fakty · plotki oddzielone od potwierdzeń · productroot.io/siatkowka<br>
+Źródła: <a href='https://siatka.org/pokaz/mistrzostwa-swiata-siatkarek-u17-polska-wenezuela-wynik-relacja/'>siatka.org U17</a> · <a href='https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/chinese-taipei-china-win-tiebreakers-as-usa-and-turkiye-complete-girls-u17-world-championship-final-four'>Volleyball World</a> · <a href='https://www.polsatsport.pl/wiadomosc/2026-08-14/lavarini-podsumowal-memorial-agaty-mroz-olszewskiej-mamy-znakomity-material-do-nauki/'>Polsat Lavarini</a> · <a href='https://www.pzps.pl/'>PZPS</a> · <a href='https://eurovolley.cev.eu/'>CEV EuroVolley</a> · <a href='https://satkurier.pl/news/252208/mistrzostwa-europy-siatkarek-2026-kiedy-mecze-polek.html'>satkurier</a> · <a href='https://www.tauronliga.pl/'>TAURON Liga</a></p>
+</div>
+</body>
+</html>
