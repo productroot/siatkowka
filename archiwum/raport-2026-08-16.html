@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang='pl'>
+<html lang="pl">
 <head>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>Poranny raport siatkówki · 16.08.2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raport siatkówki · 16.08.2026 · productroot.io/siatkowka</title>
 <style>
 :root { --bg:#0b1220; --card:#111827; --card2:#1e293b; --line:#334155; --txt:#e2e8f0; --mut:#94a3b8; --pl:#1d4ed8; --gold:#fbbf24; --win:#4ade80; --risk:#f87171; --ok:#60a5fa; --soft:#0f172a; }
 * { box-sizing:border-box; margin:0; padding:0; }
-body { font-family: ui-sans-serif, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--txt); line-height: 1.5; }
+body { font-family: ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--txt); line-height: 1.55; }
 .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 22px 72px; }
 .top { display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom: 14px; flex-wrap:wrap; }
 .kicker { color: var(--gold); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; }
 h1 { font-size: 34px; line-height: 1.12; letter-spacing: -.02em; }
-.sub { color: var(--mut); font-size: 15px; max-width: 760px; }
+.sub { color: var(--mut); font-size: 15px; max-width: 820px; }
 .live { background:#1e293b; border:1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-size: 13px; color: var(--ok); font-weight: 700; white-space: nowrap; }
-.tldr { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin: 22px 0 18px; }
+.tldr { display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; margin: 22px 0 18px; }
 .fact { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
 .fact b { display:block; color: var(--gold); font-size: 11px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:4px; }
-.fact span { font-size: 14px; color: var(--txt); }
+.fact span { font-size: 13.5px; color: var(--txt); }
 .hero { background: linear-gradient(180deg, #1e293b 0%, #111827 100%); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 14px; }
 .hero img { width: 100%; height: 300px; object-fit: cover; display: block; }
 .hero-body { padding: 18px 22px 22px; }
@@ -43,9 +43,9 @@ h1 { font-size: 34px; line-height: 1.12; letter-spacing: -.02em; }
 .tag-med { background: #1e3a5f; color: #93c5fd; }
 .tag-rum { background: #3f1d08; color: #fbbf24; }
 .tag-out { background: #3f1212; color: #fca5a5; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 th { text-align: left; color: var(--mut); font-weight: 600; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 8px 6px; border-bottom: 1px solid var(--line); }
-td { padding: 10px 6px; border-bottom: 1px solid #1f2937; }
+td { padding: 8px 6px; border-bottom: 1px solid #1f2937; }
 tr.pl td { background: #1d4ed833; font-weight: 700; }
 .pool { display:flex; flex-wrap:wrap; gap:6px; margin: 8px 0 10px; }
 .pool span { background: var(--card2); border:1px solid var(--line); border-radius:8px; padding:5px 9px; font-size:12px; }
@@ -68,177 +68,330 @@ li { margin: 4px 0; }
 p { margin: 0; }
 p + p { margin-top: 8px; }
 a { color: #93c5fd; }
-@media (max-width: 980px) { .tldr, .grid2, .grid2eq, .photos { grid-template-columns: 1fr; } h1 { font-size: 26px; } .hero img { height: 200px; } }
+.src { margin-top: 12px; padding-top: 10px; border-top: 1px dashed #334155; font-size: 12px; color: var(--mut); display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; }
+.src b { color: var(--gold); font-size: 10px; letter-spacing:.1em; text-transform:uppercase; margin-right: 4px; }
+.src a { background:#0b1220; border:1px solid var(--line); border-radius:999px; padding:3px 9px; text-decoration:none; }
+.src a:hover { border-color:#60a5fa; }
+.bracket { display:grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items:center; margin: 12px 0; }
+.bk { background:#0b1220; border:1px solid var(--line); border-radius:12px; padding:10px 12px; }
+.bk .who { font-weight:700; font-size:14px; }
+.bk .res { color: var(--win); font-size:13px; }
+.bk.lost .res { color: var(--risk); }
+.arrow { color: var(--gold); font-weight:800; text-align:center; }
+.warn { background:#1e293b; border:1px solid #475569; border-radius:12px; padding:12px 14px; margin:10px 0; font-size:13.5px; }
+.small { font-size:12.5px; color:var(--mut); }
+@media (max-width: 1100px) { .tldr { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 980px) { .tldr, .grid2, .grid2eq, .photos, .bracket { grid-template-columns: 1fr; } h1 { font-size: 26px; } .hero img { height: 200px; } .arrow { transform: rotate(90deg); } }
 </style>
 </head>
 <body>
-<div class='wrap'>
-<div class='top'>
+<div class="wrap">
+<div class="top">
 <div>
-<div class='kicker'>Poranny raport · niedziela 16.08.2026</div>
-<h1>U17 3:0 z Japonią. Dziś o 9. miejsce.</h1>
-<p class='sub'>Chile, noc z soboty na niedzielę · klasyfikacja 9–12. Seniorki: 5 dni do EuroVolley, wylot 19.08. Plaża: finały w Starych Jabłonkach, zero Polek. Źródła: Volleyball World, Polsat Sport, Wikipedia/FIVB P2, teleman.pl, siatka.org, CEV, satkurier.pl.</p>
+<div class="kicker">Rozszerzony raport · niedziela 16.08.2026 · 12:15 Warszawa</div>
+<h1>U17 3:0 z Japonią. Dziś o 9. miejsce. Plaża już na antenie.</h1>
+<p class="sub">Chile, nocą: Polska ograła Japonię w klasyfikacji 9–12. W nocy POL–DOM o dziewiąte. Seniorki: 5 dni do EuroVolley, 14-osobowa kadra nadal nieogłoszona. W Starych Jabłonkach telewizja jest już przy drugim półfinale mężczyzn — żadna polska para nie gra.</p>
 </div>
-<div class='live'>Dziś: plaża od 10:45 Sport 2 · U17 POL–DOM 00:00</div>
+<div class="live">Plaża: Sport 2 na żywo · U17 POL–DOM 00:00</div>
 </div>
 
-<section class='tldr' aria-label='TL;DR'>
-<div class='fact'><b>Nocą U17</b><span>POL 3:0 JPN (25:15, 25:21, 25:19)</span></div>
-<div class='fact'><b>Następny U17</b><span>POL–DOM o 9. miejsce · 00:00 poniedziałek</span></div>
-<div class='fact'><b>Punkty meczu</b><span>75:55 łącznie · frekwencja 537 · bez karty graczy</span></div>
-<div class='fact'><b>EuroVolley</b><span>Za 5 dni · wylot 19.08 · HUN 22.08 18:00</span></div>
-<div class='fact'><b>Finał U17</b><span>USA – TUR 19:00 Chile = 01:00 pon.</span></div>
-<div class='fact'><b>Plaża ME</b><span>Finał kobiet 14:40 Sport 2 · 0 par PL</span></div>
-<div class='fact'><b>Kadra 14</b><span>PZPS nadal nie ogłosił składu na ME</span></div>
-<div class='fact'><b>TV dziś</b><span>Plaża: Sport 2 + Extra 3 od 10:45</span></div>
+<section class="tldr" aria-label="TL;DR">
+<div class="fact"><b>1. U17 nocą</b><span>POL 3:0 JPN (25:15, 25:21, 25:19), 75:55, 537 widzów</span></div>
+<div class="fact"><b>2. Dziś o 9.</b><span>POL–DOM, 18:00 Chile = 00:00 pon. Warszawa</span></div>
+<div class="fact"><b>3. Boxscore POL–JPN</b><span>Brak punktów zawodniczek. Ostatnia karta: POL–VEN 14.08</span></div>
+<div class="fact"><b>4. Mondesi</b><span>45 pkt (42 atak, 3 asy) vs ARG — rekord MŚ, VW</span></div>
+<div class="fact"><b>5. Finał U17</b><span>USA–TUR 19:00 Chile = 01:00 pon. · USA bez straty seta</span></div>
+<div class="fact"><b>6. EuroVolley</b><span>HUN–POL 22.08 18:00 Warszawa, Polsat Sport 1</span></div>
+<div class="fact"><b>7. Kadra 14</b><span>PZPS / Polsat / siatka.org: cisza do południa 16.08</span></div>
+<div class="fact"><b>8. Plaża TV</b><span>Sport 2: II SF mężczyzn od 12:10 · finał K 14:40</span></div>
+<div class="fact"><b>9. 0 par PL</b><span>Pięć duetów kobiet i pięć męskich poza ME przed 1/8</span></div>
+<div class="fact"><b>10. Lavarini</b><span>Vero Volley: rozwiązanie 14.08. Fenerbahçe bez komunikatu klubu</span></div>
 </section>
 
-<section class='hero'>
-<img src='../img/u17.svg' alt='Reprezentacja Polski U17 kobiet na mistrzostwach świata w Chile'>
-<div class='hero-body'>
-<div class='kicker'>Nocą · MŚ U17 · Chile · miejsca 9–12</div>
-<div class='score'>POLSKA  <span class='won'>3 : 0</span>  JAPONIA</div>
-<div class='meta'>Sobota 15.08, 20:00 Chile = niedziela 02:00 Warszawa · 75:55 punktów · 537 widzów · Wikipedia / FIVB P2</div>
-<div class='sets'>
-<div class='chip'><span>I</span><b>25:15</b></div>
-<div class='chip'><span>II</span><b>25:21</b></div>
-<div class='chip'><span>III</span><b>25:19</b></div>
+<section class="hero">
+<img src="../img/u17.svg" alt="Reprezentacja Polski U17 kobiet na mistrzostwach świata w Chile">
+<div class="hero-body">
+<div class="kicker">Nocą · MŚ U17 · Santiago · miejsca 9–12</div>
+<div class="score">POLSKA  <span class="won">3 : 0</span>  JAPONIA</div>
+<div class="meta">Sobota 15.08, 20:00 Chile = niedziela 02:00 Warszawa · Playoff 9–12, mecz #88 · 75:55 · 537 widzów</div>
+<div class="sets">
+<div class="chip"><span>I</span><b>25:15</b></div>
+<div class="chip"><span>II</span><b>25:21</b></div>
+<div class="chip"><span>III</span><b>25:19</b></div>
+<div class="chip"><span>Suma</span><b>75:55</b></div>
 </div>
-<p><span class='tag tag-ok'>Potwierdzone</span> Drugie 3:0 z rzędu w klasyfikacji 9–16. Polsat Sport (15.08): I set od początku pod dyktando Polek, 10 punktów przewagi. II: wyrównany do 11:11, potem inicjatywa Polski, 25:21. III: Japonia 6:3 i 9:7, Polki odrobiły, od 15:15 odskoczyły, 25:19.</p>
-<p style='margin-top:10px'>Volleyball World (16.08, 03:00): „Poland joined them in the next round of the 9th–12th classification with a 3-0 (25-15, 25-21, 25-19) win over Japan.” Niezależne potwierdzenie setów. Recenzja VW nie podaje punktów Polek — kart VIS bez JS nie wczytujemy, nie dopisujemy boxscore’u.</p>
-<p style='margin-top:8px'>Kontekst: w grupie C Polki ograły Japonię 3:1 (22:25, 25:23, 25:7, 25:21). W R16 Japonia odpadła z Turcją <b>0:3 (25:18, 25:7, 25:23)</b> — Volleyball World / Wikipedia. Wczorajszy raport miał literówkę 1:3. Nie powtarzamy.</p>
-<p class='note'>Ostatni nazwany boxscore z Chile: POL–VEN, siatka.org — Jakubowska 11, Derczyńska 11 (4 asy w III). Nocnego POL–JPN nikt z polskich redakcji punktowo nie rozpisał do rana 16.08.</p>
+<p><span class="tag tag-ok">Potwierdzone</span> Drugie 3:0 z rzędu w klasyfikacji 9–16. <a href="https://www.polsatsport.pl/wiadomosc/2026-08-15/polska-japonia-wynik-meczu-polskich-siatkarek-kto-wygral-mecz-polska-japonia-u17/">Polsat Sport</a> (15.08): I set od początku pod dyktando Polek, 10 punktów przewagi. II: wyrównany do 11:11, potem inicjatywa Polski, 25:21. III: Japonia 6:3 i 9:7, Polki odrobiły, od 15:15 odskoczyły, 25:19.</p>
+<p><a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">Volleyball World</a> (16.08, 03:00): „Poland joined them in the next round of the 9th–12th classification with a 3-0 (25-15, 25-21, 25-19) win over Japan.” <a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/schedule/27046?match=Poland-vs-Japan">VW match centre #27046</a> powtarza te same sety, bez karty graczy w HTML. <a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia / FIVB P2</a>: 75:55, frekwencja 537. <a href="https://www.flashscore.com/volleyball/world/world-championship-u17-women/results/">Flashscore</a>: te same sety, zero statystyk zawodniczek w feedzie.</p>
+<p>Kontekst grupy C: Polska ograła Japonię 3:1 (22:25, 25:23, 25:7, 25:21) — <a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-and-china-keep-set-perfect-runs-as-unbeaten-field-narrows-in-chile">VW, 8.08</a>: Wika 17, Derczyńska 14, Bladocha 11. W R16 Japonia odpadła z Turcją <b>0:3 (25:18, 25:7, 25:23)</b>, nie 1:3. <a href="https://www.pzps.pl/">PZPS</a> na stronie głównej: „MŚ U17K: znamy półfinalistów. Biało-Czerwone walczą o 9. miejsce” (15.08) — bez recenzji nocnego meczu i bez punktów.</p>
+<div class="warn"><b>Polowanie na boxscore POL–JPN (klasyfikacja, 15.08 20:00 Chile).</b> Otwarte i bez punktów zawodniczek: Polsat recap · VW recap 03:00 · VW schedule/27046 · Wikipedia P2 (sety + 75:55 + 537) · Flashscore results · PZPS homepage · siatka.org (brak recenzji tego meczu; jest tylko grupowe POL–JPN). Sofascore nie dał osobnej karty. Nie dopisujemy VIS-a z JS. Ostatnia nazwana karta z Chile jest niżej — POL–VEN, 14.08.</div>
+<div class="src"><b>Źródła tej sekcji</b>
+<a href="https://www.polsatsport.pl/wiadomosc/2026-08-15/polska-japonia-wynik-meczu-polskich-siatkarek-kto-wygral-mecz-polska-japonia-u17/">Polsat Sport</a>
+<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">Volleyball World</a>
+<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/schedule/27046?match=Poland-vs-Japan">VW #27046</a>
+<a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia</a>
+<a href="https://www.flashscore.com/volleyball/world/world-championship-u17-women/results/">Flashscore</a>
+<a href="https://www.pzps.pl/">PZPS</a>
+</div>
 </div>
 </section>
 
-<div class='grid2'>
-<section class='card'>
-<h2>U17 · co dalej</h2>
-<h3>Dziś w nocy: Polska – Dominikana o 9.</h3>
-<p><span class='tag tag-ok'>Potwierdzone</span> Volleyball World + Wikipedia: niedziela 16.08, <b>18:00 Chile = 00:00 poniedziałek 17.08, Warszawa</b>. Mecz o 9. miejsce. Przegrany kończy turniej na 10.</p>
-<p style='margin-top:8px'>Dominikana weszła po thrillerze 3:2 z Argentyną (25:21, 25:17, 17:25, 17:25, 17:15). Rayni Mondesi: <b>45 punktów</b> (42 atak, 3 asy) — rekord turnieju, VW. To nie jest Wenezuela z 25:8. Jeśli Polki znów nie kończą ataku, 45-punktowa skrzydłowa to zje.</p>
-<p class='tv' style='margin-top:10px'>Kanału TV na POL–DOM Polsat rano nie podał. Nie zgadujemy. Volleyball World streamuje MŚ na YouTube.</p>
-<p class='meta' style='margin-top:8px'>Bilans Polek: grupa 5–0, sety 15:3 · R16 1:3 THA (19:25, 21:25, 25:10, 23:25) · 9–16: VEN 3:0, JPN 3:0. Cel po odpadnięciu z medalowej drabinki nie zmienił się: dziewiąte.</p>
-<p class='ask'>Dwa sweepy z rzędu to reset, nie rewanż za Tajlandię. Dominikana sprawdzi, czy reset trzyma przy ofensywie, która wczoraj skończyła 45.</p>
+<div class="grid2">
+<section class="card">
+<h2>U17 · drabinka 9–12</h2>
+<h3>Dwa sweepy. Finał o 9. z Dominikaną</h3>
+<div class="bracket">
+<div class="bk">
+<div class="who">POL 3:0 JPN</div>
+<div class="res">25:15, 25:21, 25:19 · 75:55 · 537</div>
+<div class="small">15.08, 20:00 Chile</div>
+</div>
+<div class="arrow">→</div>
+<div class="bk" style="border-color:#fbbf24">
+<div class="who">POL – DOM o 9.</div>
+<div class="res">dziś 18:00 Chile = 00:00 pon. Warszawa</div>
+<div class="small">przegrany = 10. miejsce</div>
+</div>
+<div class="bk lost">
+<div class="who">DOM 3:2 ARG</div>
+<div class="res">25:21, 25:17, 17:25, 17:25, 17:15</div>
+<div class="small">Mondesi 45 pkt · 502 widzów</div>
+</div>
+<div class="arrow">→</div>
+<div class="bk lost">
+<div class="who">ARG – JPN o 11.</div>
+<div class="res">dziś 15:00 Chile = 21:00 Warszawa</div>
+<div class="small">przegrany = 12. miejsce</div>
+</div>
+</div>
+<table>
+<thead><tr><th>Mecz</th><th>Chile</th><th>Warszawa</th><th>Status 12:15</th></tr></thead>
+<tbody>
+<tr><td>CZE – PHI o 15.</td><td>09:00</td><td>15:00</td><td>nie rozpoczęty</td></tr>
+<tr><td>CRO – THA o 7.</td><td>10:00</td><td>16:00</td><td>nie rozpoczęty</td></tr>
+<tr><td>PER – VEN o 13.</td><td>12:00</td><td>18:00</td><td>nie rozpoczęty</td></tr>
+<tr><td>ITA – KOR o 5.</td><td>13:00</td><td>19:00</td><td>nie rozpoczęty</td></tr>
+<tr><td>ARG – JPN o 11.</td><td>15:00</td><td>21:00</td><td>nie rozpoczęty</td></tr>
+<tr><td>CHN – TPE o 3.</td><td>16:00</td><td>22:00</td><td>nie rozpoczęty</td></tr>
+<tr class="pl"><td>DOM – POL o 9.</td><td>18:00</td><td>00:00 pon.</td><td>nie rozpoczęty</td></tr>
+<tr><td>USA – TUR finał</td><td>19:00</td><td>01:00 pon.</td><td>nie rozpoczęty</td></tr>
+</tbody>
+</table>
+<p class="note">Chile UTC−4. Warszawa CEST UTC+2. Niedzielne mecze w Santiago o 12:15 czasu polskiego jeszcze nie ruszyły — pierwsza piłka CZE–PHI o 15:00.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia harmonogram</a>
+<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">VW niedziela</a>
+<a href="https://www.flashscore.com/volleyball/world/world-championship-u17-women/results/">Flashscore</a>
+</div>
 </section>
-<section class='card'>
+<section class="card">
+<h2>U17 · Dominikana</h2>
+<h3>Nie Wenezuela. Mondesi 45</h3>
+<p><span class="tag tag-ok">Potwierdzone</span> <a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">VW</a>: Rayni Mondesi 45 punktów (42 atak, 3 asy) w 3:2 z Argentyną — rekord turnieju. DOM wygrała 17:15 w tie-breaku po stracie setów III i IV.</p>
+<p>To nie jest Wenezuela z 25:8. Jeśli Polki znów nie kończą ataku, 45-punktowa skrzydłowa to zje. Kanału TV na POL–DOM Polsat do południa nie podał. Nie zgadujemy. VW streamuje MŚ na YouTube.</p>
+<p class="meta">Bilans Polek: grupa 5–0, sety 15:3 (432:324) · R16 1:3 THA (19:25, 21:25, 25:10, 23:25) · 9–16: VEN 3:0, JPN 3:0. Cel po odpadnięciu z medalowej drabinki nie zmienił się: dziewiąte.</p>
+<p class="ask">Dwa sweepy z rzędu to reset, nie rewanż za Tajlandię. Dominikana sprawdzi, czy reset trzyma.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">VW Mondesi</a>
+<a href="https://www.polsatsport.pl/wiadomosc/2026-08-15/polska-japonia-wynik-meczu-polskich-siatkarek-kto-wygral-mecz-polska-japonia-u17/">Polsat POL–DOM</a>
+<a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia Pool C</a>
+</div>
+</section>
+</div>
+
+<section class="card" style="margin-top:12px">
+<h2>Ostatnia nazwana karta · POL–VEN 14.08</h2>
+<h3>Jakubowska 11, Derczyńska 11 — nie mylić z nocnym POL–JPN</h3>
+<p><span class="tag tag-ok">14/15.08</span> Klasyfikacja 9–16, ćwierćfinał. Polska 3:0 Wenezuela (25:8, 25:21, 25:16), 75:45, 382 widzów. Relacja i składy: <a href="https://siatka.org/pokaz/mistrzostwa-swiata-siatkarek-u17-polska-wenezuela-wynik-relacja/">siatka.org</a>. Wikipedia/FIVB P2 potwierdza sety i frekwencję.</p>
+<table>
+<thead><tr><th>Polska</th><th>Pkt</th><th>Wenezuela</th><th>Pkt</th></tr></thead>
+<tbody>
+<tr class="pl"><td>Gabriela Jakubowska</td><td>11</td><td>Colina</td><td>6</td></tr>
+<tr class="pl"><td>Hanna Derczyńska</td><td>11</td><td>Pacheco</td><td>6</td></tr>
+<tr><td>Zuzanna Lange</td><td>7</td><td>Salas</td><td>4</td></tr>
+<tr><td>Aleksandra Wika</td><td>6</td><td>Zerpa</td><td>3</td></tr>
+<tr><td>Przybyłkowicz</td><td>6</td><td>Mardenli</td><td>2</td></tr>
+<tr><td>Klaudia Bladocha</td><td>4</td><td>Carima / Rodriguez / Sanoja / La Rosa</td><td>1</td></tr>
+<tr><td>Jucha</td><td>4</td><td></td><td></td></tr>
+<tr><td>Majchrowicz</td><td>2</td><td></td><td></td></tr>
+</tbody>
+</table>
+<p class="note">Derczyńska: 4 asy w III secie. Libero: Szymczyk, Galas. Ławka bez punktów: Karsznia, Różańska, Jurasz. To jedyna pełna karta z Chile, którą polska redakcja rozpisała do południa 16.08. Nocnego POL–JPN nikt nie rozpisał.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://siatka.org/pokaz/mistrzostwa-swiata-siatkarek-u17-polska-wenezuela-wynik-relacja/">siatka.org POL–VEN</a>
+<a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia 9–16</a>
+</div>
+</section>
+
+<div class="grid2" style="margin-top:12px">
+<section class="card">
 <h2>MŚ U17 · finał bez Polek</h2>
 <h3>USA – Turcja o tytuł</h3>
-<p>Półfinały sobota (VW): USA 3:0 CHN (25:13, 25:15, 25:19) — Knotts 19 (18 atak), Ogbogu 15, blok 9–2, atak 44–19. USA bez straty seta w całym turnieju. TUR 3:0 TPE (25:15, 25:22, 25:22) — Alpay 15, Guzonjic 12 (6 bloków), Türkyaşar 11; blok Turcji 17–0.</p>
-<p style='margin-top:8px'>Finał: USA–TUR, 19:00 Chile = <b>01:00 pon. Warszawa</b>, National Stadium Park. Brąz CHN–TPE 16:00 Chile = 22:00 dziś. Rewanż z grupy A, gdzie USA ograło Turcję 3:0.</p>
-<p class='note'>To kontekst, nie polski mecz. Polki grają równolegle o 9. 5.–8.: ITA 3:0 CRO (25:14, 25:18, 25:8), KOR 3:0 THA. Dziś ITA–KOR o 5. (13:00 Chile), CRO–THA o 7. (10:00).</p>
+<p>Półfinały sobota (<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">VW</a>): USA 3:0 CHN (25:13, 25:15, 25:19) — Knotts 19 (18 atak), Ogbogu 15, Mortensen 9 (6 bloków); blok 9–2, atak 44–19. USA bez straty seta w całym turnieju. TUR 3:0 TPE (25:15, 25:22, 25:22) — Alpay 15, Guzonjic 12 (6 bloków), Türkyaşar 11; blok Turcji 17–0.</p>
+<p>Finał: USA–TUR, 19:00 Chile = <b>01:00 pon. Warszawa</b>, National Stadium Park. Brąz CHN–TPE 16:00 Chile = 22:00 dziś. Rewanż z grupy A, gdzie USA ograło Turcję 3:0.</p>
+<p class="note">5.–8.: ITA 3:0 CRO (25:14, 25:18, 25:8), KOR 3:0 THA (25:19, 25:11, 26:24) — sety Korei za recenzją VW, nie za inną tabelą. Dziś ITA–KOR o 5., CRO–THA o 7.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">VW półfinały</a>
+<a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia</a>
+</div>
 </section>
-</div>
-
-<div class='photos'>
-<div>
-<img src='../img/grabka.svg' alt='Alicja Grabka'>
-<div class='cap'>Alicja Grabka — Koszalin za nami. Do Stambułu wylot 19.08. Kadra 14: cisza PZPS.</div>
-</div>
-<div>
-<img src='../img/piasecka.svg' alt='Julita Piasecka'>
-<div class='cap'>Julita Piasecka — lekcja z Włochami zostaje w banku. ME za 5 dni.</div>
-</div>
-</div>
-
-<div class='grid2'>
-<section class='card'>
+<section class="card">
 <h2>Seniorki · po Koszalinie</h2>
 <h3>Bez meczu. 5 dni do ME, 14-osobowa cisza</h3>
-<p><span class='tag tag-ok'>Potwierdzone</span> Memoriał Agaty Mróz-Olszewskiej zamknięty 13.08. Włochy 1., Polska 2. po 0:3 (16:25, 21:25, 20:25). POL–UKR w grupie było <b>3:0</b>, nie 3:1. sportoweswiecie.pl (14.08): atak vs Włochy <b>26%</b> przy <b>49%</b> Italii, blok <b>3–12</b> — nie VIS, relacja medialna.</p>
-<div class='quote'>„Szczerze mówiąc, myślę, że podeszliśmy do rywalek ze zbyt dużym respektem.” — Stefano Lavarini, Polsat Sport, 14.08</div>
-<p><span class='tag tag-ok'>Potwierdzone</span> Wylot <b>19.08</b> do Stambułu. Polsat, 14.08. Nowego meczu seniorskiego nie było i nie będzie przed ME.</p>
-<p class='note'>Radio Koszalin zapowiadało 14-osobową kadrę po Memoriale. Do rana 16.08: zero komunikatu PZPS, zero Polsatu, zero siatka.org. 16 z Szczyrku bez Łukasik (bark, zabieg — PZPS wcześniej). Nie zgadujemy, kto wypada z 16.</p>
-</section>
-<section class='card'>
-<h2>EuroVolley · odliczanie</h2>
-<h3>21.08 – 6.09 · za 5 dni</h3>
-<p>Pool A, Stambuł, Sinan Erdem: Turcja, Łotwa, Polska, Niemcy, Słowenia, Węgry.</p>
-<div class='pool'>
-<span class='home'>TUR</span><span>LAT</span><span class='home'>POL</span><span>GER</span><span>SLO</span><span>HUN</span>
+<p><span class="tag tag-ok">Potwierdzone</span> Memoriał Agaty Mróz-Olszewskiej zamknięty 13.08. Włochy 1., Polska 2. po 0:3 (16:25, 21:25, 20:25). POL–UKR w grupie było <b>3:0</b>, nie 3:1. <a href="https://www.sportoweswiecie.pl/node/4327">sportoweswiecie.pl</a> (14.08): atak vs Włochy <b>26%</b> przy <b>49%</b> Italii, blok <b>3–12</b>. Skład vs ITA: Wenerska, Stysiak, Piasecka, Orzoł, Jurczyk, Koput, Szczygłowska (L) + Szczurowska, Stefanik, Grabka, Damaske, Łysiak.</p>
+<div class="quote">„Szczerze mówiąc, myślę, że podeszliśmy do rywalek ze zbyt dużym respektem.” — Stefano Lavarini, Polsat Sport, 14.08</div>
+<p><span class="tag tag-ok">Potwierdzone</span> Wylot <b>19.08</b> do Stambułu. Nowego meczu seniorskiego nie było i nie będzie przed ME.</p>
+<p class="note">16 z Szczyrku bez Łukasik (bark). Radio Koszalin zapowiadało czternastkę po Memoriale. Do południa 16.08: zero komunikatu <a href="https://www.pzps.pl/">PZPS</a>, zero Polsatu, zero <a href="https://siatka.org/pokaz/reprezentacja-polski-siatkarek-sklad-na-mistrzostwa-europy-2026/">siatka.org</a>. Nie zgadujemy, kto wypada z 16.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://www.sportoweswiecie.pl/node/4327">Sportowe Świecie</a>
+<a href="https://siatka.org/pokaz/reprezentacja-polski-siatkarek-sklad-na-mistrzostwa-europy-2026/">siatka.org 16</a>
+<a href="https://www.pzps.pl/">PZPS</a>
 </div>
-<p>Pierwszy mecz: Węgry – Polska, 22.08, 19:00 Istanbul = <b>18:00 Warszawa</b>. TV: <b>Polsat Sport 1</b> — satkurier.pl (aktualizacja 09.08, plan z Polsat Sport). Turniej otwiera 21.08 TUR–LAT, też Sport 1.</p>
-<p style='margin-top:8px'>Dalej w grupie (Warszawa, satkurier): Łotwa 24.08 15:00 Sport 1 · Słowenia 25.08 18:00 Sport 1 · Niemcy 27.08 15:00 Sport 1 · Turcja 28.08 18:00 Sport 1.</p>
-<p class='meta' style='margin-top:8px'>VNL 2026: Polska 8. fazy wstępnej, 7–5. Do Final 8 nie weszła. Zwycięzca ME ma bilet olimpijski LA 2028.</p>
-<p class='ask'>Lavarini: dwa piąte miejsca w poprzednich ME, kadra przebudowana. Cel: mecz po meczu, nie kategorie Węgry vs Turcja. Najpierw trzeba ogłosić czternastkę.</p>
 </section>
 </div>
 
-<div class='grid2eq' style='margin-top:12px'>
-<section class='card'>
-<h2>EuroBeachVolley · Stare Jabłonki</h2>
-<h3>Finały dziś. Polskie pary: 0 w grze</h3>
-<p><span class='tag tag-out'>Poza turniejem</span> Wszystkie pięć par kobiet poza ME od 13.08. Ostatnie: Łunio/Kruczek 0:2 z Paulikiene/Raupelyte (LTU). Mężczyźni też od czwartku poza drabinką.</p>
-<p style='margin-top:8px'><span class='tag tag-ok'>Potwierdzone</span> Półfinały kobiet, sobota (Interia / siatka.org): Stam/Schoon (NED) 2:1 Vieira/Chamereau (FRA) 19:21, 21:14, 15:12. Izuzquiza/Moreno (ESP) 2:1 Graudiņa/Samoilova (LAT) 13:21, 21:14, 15:10 — mistrzynie świata poza finałem.</p>
-<p class='tv' style='margin-top:10px'>TV dziś, teleman.pl 16.08 · <b>Polsat Sport 2</b> i <b>Extra 3</b>, studio od <b>10:45</b> (Tomasz Krochmal): 10:55 / 12:10 półfinały mężczyzn · 13:25 brąz kobiet · <b>14:40 finał kobiet</b> · 15:55 brąz mężczyzn · 17:10 finał mężczyzn · 18:00 ceremonia. Kort (siatka.org): SWE–SWE 11:00, NOR–FRA 12:15, LAT–FRA 13:30, ESP–NED 14:30, brąz M 16:00, finał M 17:00. Box Go.</p>
-<p class='note'>Finał kobiet: Izuzquiza/Moreno – Stam/Schoon. Brąz: Graudiņa/Samoilova – Vieira/Chamereau. Półfinały mężczyzn dopiero dziś: Hölting Nilsson/Andersson – Åhman/Hellvig; Mol/Sørum – Rotar/Gauthier-Rat. Złoto = slot olimpijski LA 2028.</p>
+<div class="photos">
+<div>
+<img src="../img/grabka.svg" alt="Alicja Grabka">
+<div class="cap">Alicja Grabka — Koszalin za nami. Do Stambułu wylot 19.08. Kadra 14: cisza PZPS.</div>
+</div>
+<div>
+<img src="../img/piasecka.svg" alt="Julita Piasecka">
+<div class="cap">Julita Piasecka — 14 pkt vs Francja (siatka / Sportowe Świecie). Lekcja z Włochami zostaje w banku.</div>
+</div>
+</div>
+
+<section class="card">
+<h2>EuroVolley · Pool A · Stambuł</h2>
+<h3>21.08 – 6.09 · za 5 dni · Sinan Erdem</h3>
+<div class="pool">
+<span class="home">TUR gospodarz</span><span>LAT</span><span class="home">POL</span><span>GER</span><span>SLO</span><span>HUN</span>
+</div>
+<table>
+<thead><tr><th>Data</th><th>Mecz (czas Warszawa)</th><th>TV</th></tr></thead>
+<tbody>
+<tr><td>21.08 18:00</td><td>TUR – LAT · otwarcie grupy</td><td>Polsat Sport 1</td></tr>
+<tr class="pl"><td>22.08 18:00</td><td>HUN – POL · pierwszy mecz Polek</td><td>Polsat Sport 1</td></tr>
+<tr class="pl"><td>24.08 15:00</td><td>POL – LAT</td><td>Polsat Sport 1</td></tr>
+<tr class="pl"><td>25.08 18:00</td><td>POL – SLO</td><td>Polsat Sport 1</td></tr>
+<tr class="pl"><td>27.08 15:00</td><td>POL – GER</td><td>Polsat Sport 1</td></tr>
+<tr class="pl"><td>28.08 18:00</td><td>TUR – POL</td><td>Polsat Sport 1</td></tr>
+</tbody>
+</table>
+<p class="note">Godziny za <a href="https://satkurier.pl/news/252208/mistrzostwa-europy-siatkarek-2026-kiedy-mecze-polek.html">satkurier.pl</a> (aktualizacja 09.08, plan Polsat Sport) i <a href="https://www.polsatsport.pl/wiadomosc/2026-08-05/mistrzostwa-europy-siatkarek-2026-mecze-polski-kiedy-o-ktorej-godzinie/">Polsat Sport</a>. Stambuł UTC+3 = Warszawa +1. 1/8 Polek — niezależnie od miejsca 1–4 — zostaje w Stambule. Zwycięzca ME ma bilet olimpijski LA 2028.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://satkurier.pl/news/252208/mistrzostwa-europy-siatkarek-2026-kiedy-mecze-polek.html">satkurier</a>
+<a href="https://www.polsatsport.pl/wiadomosc/2026-08-05/mistrzostwa-europy-siatkarek-2026-mecze-polski-kiedy-o-ktorej-godzinie/">Polsat EV</a>
+<a href="https://siatka.org/pokaz/mistrzostwa-europy-siatkarki-podzial-grupy/">siatka.org grupy</a>
+</div>
 </section>
-<section class='card'>
+
+<section class="card" style="margin-top:12px">
+<h2>EuroBeachVolley · Stare Jabłonki</h2>
+<h3>Finały dziś. Polskie pary: 0. Wyniku SF mężczyzn jeszcze nie ma w tekście</h3>
+<p><span class="tag tag-out">Poza turniejem</span> Wszystkie pięć par kobiet poza ME od 13.08. Ostatnie: Łunio/Kruczek 0:2 z Paulikiene/Raupelyte (LTU). Mężczyźni też od czwartku poza drabinką. <a href="https://www.cev.eu/articles/beach-volleyball/world-s-beach-volleyball-elite-to-convene-in-stare-jablonki-for-eurobeachvolley/">CEV</a> / <a href="https://ebv2026.pl/">ebv2026.pl</a>.</p>
+<p><span class="tag tag-ok">Potwierdzone</span> Półfinały kobiet, sobota (<a href="https://siatka.org/pokaz/siatkowka-plazowa-mistrzostwa-europy-podsumowanie/">siatka.org</a>): Stam/Schoon (NED) 2:1 Vieira/Chamereau (FRA) 19:21, 21:14, 15:12. Izuzquiza/Moreno (ESP) 2:1 Graudiņa/Samoilova (LAT) 13:21, 21:14, 15:10 — mistrzynie świata poza finałem.</p>
+<table>
+<thead><tr><th>Kort / TV</th><th>Mecz</th><th>teleman Sport 2</th><th>kort (siatka)</th></tr></thead>
+<tbody>
+<tr><td>I SF mężczyzn</td><td>Hölting Nilsson/Andersson – Åhman/Hellvig (SWE–SWE)</td><td>10:55</td><td>11:00</td></tr>
+<tr class="pl"><td>II SF mężczyzn · teraz</td><td>Mol/Sørum (NOR) – Rotar/Gauthier-Rat (FRA)</td><td>12:10</td><td>12:15</td></tr>
+<tr><td>Brąz kobiet</td><td>Graudiņa/Samoilova – Vieira/Chamereau</td><td>13:25</td><td>13:30</td></tr>
+<tr><td>Finał kobiet</td><td>Izuzquiza/Moreno – Stam/Schoon</td><td>14:40</td><td>14:30</td></tr>
+<tr><td>Brąz mężczyzn</td><td>przegrani SF</td><td>15:55</td><td>16:00</td></tr>
+<tr><td>Finał mężczyzn</td><td>zwycięzcy SF</td><td>17:10</td><td>17:00</td></tr>
+<tr><td>Ceremonia</td><td>medale K+M · pula 1,3 mln zł</td><td>18:00</td><td>—</td></tr>
+</tbody>
+</table>
+<p class="tv" style="margin-top:10px"><a href="https://www.teleman.pl/program-tv/stacje/Polsat-Sport-2?date=2026-08-16">teleman.pl 16.08</a> o 12:16 pokazywał „OD TERAZ 12:10 II półfinał mężczyzn”. Studio od 10:45, Tomasz Krochmal, Sport 2 + Extra 3, Box Go. <b>Żaden pisany wynik I SF SWE–SWE nie wylądował</b> w CEV / siatka.org / Flashscore-tekście do tej godziny — nie zgadujemy, kto wygrał all-Swedish.</p>
+<p class="note">Złoto = slot olimpijski LA 2028. QF mężczyzn sobota: Mol/Sørum 2:0 van de Velde/de Groot (21:19, 22:20); Åhman/Hellvig 2:0 Bassereau/Aye (21:16, 21:18); Hölting Nilsson/Andersson 2:1 Heidrich/Haussener (21:17, 19:21, 15:11); Rotar/Gauthier-Rat 2:1 Waller/Pristauz (18:21, 21:18, 15:13).</p>
+<div class="src"><b>Źródła</b>
+<a href="https://www.teleman.pl/program-tv/stacje/Polsat-Sport-2?date=2026-08-16">teleman Sport 2</a>
+<a href="https://www.polsatsport.pl/wiadomosc/2026-08-10/me-w-siatkowce-plazowej-stare-jablonki-2026-transmisja-tv-i-stream-online-gdzie-obejrzec/">Polsat plaża TV</a>
+<a href="https://siatka.org/pokaz/siatkowka-plazowa-mistrzostwa-europy-podsumowanie/">siatka.org plaża</a>
+<a href="https://www.cev.eu/articles/beach-volleyball/world-s-beach-volleyball-elite-to-convene-in-stare-jablonki-for-eurobeachvolley/">CEV</a>
+<a href="https://ebv2026.pl/">ebv2026.pl</a>
+</div>
+</section>
+
+<div class="grid2eq" style="margin-top:12px">
+<section class="card">
 <h2>TAURON Liga · przedsezon</h2>
 <h3>Tabeli nie ma. Superpuchar 24.10</h3>
-<p>Superpuchar AL-KO: <b>24.10.2026, 14:45</b>, Hala Sportowa Częstochowa — PGE Budowlani Łódź vs KS DevelopRes Rzeszów. tauronliga.pl / PLS.</p>
-<p class='item' style='margin-top:10px'><span class='tag tag-med'>Doniesienie medialne</span> siatka.org (14.08): Antonina Stautz (GER) ma dołączyć do #Volley Wrocław na przyjęcie. Nadal bez komunikatu klubu na tauronliga.pl — nie podnosimy.</p>
-<p class='item' style='margin-top:8px'><span class='tag tag-ok'>Potwierdzone</span> Julia Nowicka przedłużyła z Gerdau/Minas (BRA), siatka.org 12.08. Świeże, ale nie z nocy. W Superlidze będzie też Stysiak (Osasco).</p>
-<p class='meta' style='margin-top:8px'>Bez recyklingu lipcowych transferów. Sezon ligowy kobiet jeszcze nie wystartował.</p>
-</section>
+<p>Superpuchar AL-KO kobiet: <b>24.10.2026, 14:45</b>, Hala Sportowa Częstochowa — PGE Budowlani Łódź vs KS DevelopRes Rzeszów. Mężczyźni dzień później, 25.10. <a href="https://www.tauronliga.pl/">tauronliga.pl</a> / PLS. Sezon ligowy kobiet jeszcze nie wystartował.</p>
+<p class="item"><span class="tag tag-med">Doniesienie medialne</span> <a href="https://siatka.org/pokaz/zagraniczna-przyjmujaca-volley-wroclaw/">siatka.org</a>: Antonina Stautz (GER) ma dołączyć do #Volley Wrocław na przyjęcie. Nadal bez komunikatu klubu na tauronliga.pl — nie podnosimy do „oficjalne”.</p>
+<p class="item"><span class="tag tag-ok">Potwierdzone wcześniej</span> Julia Nowicka przedłużyła z Gerdau/Minas (BRA). W Superlidze będzie też Stysiak (Osasco). Bez recyklingu lipcowych transferów.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://www.tauronliga.pl/">tauronliga.pl</a>
+<a href="https://siatka.org/pokaz/zagraniczna-przyjmujaca-volley-wroclaw/">siatka.org Stautz</a>
 </div>
-
-<div class='grid2eq' style='margin-top:12px'>
-<section class='card'>
+</section>
+<section class="card">
 <h2>Plotki i kluby · oddzielone</h2>
 <h3>Lavarini bez Mediolanu. Kadra zostaje</h3>
-<p><span class='tag tag-ok'>Potwierdzone</span> Numia Vero Volley Milano rozwiązało kontrakt ze Stefano Lavarini za porozumieniem stron. Komunikat klubu + @VeroVolley, 14.08. Z klubem: asystent Mafrici i statystyk Kacper Duda. Następca: Gianlorenzo Blengini. siatka.org. To nie zwolnienie z kadry Polski.</p>
-<p class='item' style='margin-top:8px'><span class='tag tag-rum'>Plotka</span> Powrót Lavariniego do Fenerbahçe Medicana — „już od pewnego czasu się mówi”. siatka.org, bez klubu z Stambułu. Nocą nikt tego nie potwierdził.</p>
-<p class='item' style='margin-top:8px'><span class='tag tag-ok'>Potwierdzone</span> Loveth Omoruyi (ITA): ACL kolana lewego, operacja, bez EuroVolley. Kontuzja 12.08 vs Ukraina w Koszalinie. siatka.org / volleyball.it / FIPAV.</p>
-</section>
-<section class='card'>
-<h2>Pod lupą / zawodniczka 24 h</h2>
-<h3>Dominikana · drużyna U17</h3>
-<p><b>Pod lupą:</b> Rayni Mondesi i cała Dominikana. 45 punktów w 5 setach z Argentyną to nie ciekawostka — to profil rywalki o 9. miejsce. VW. Polki w nocy ograły Japonię bez boxscore’u; nie wiemy, kto skończył.</p>
-<p style='margin-top:8px'><b>Zawodniczka nocy:</b> reprezentacja U17 jako całość. Drugi 3:0 z rzędu, 75:55, set do 15. Bez karty graczy nie nagradzamy zmyślonym MVP. Ostatnie nazwane liczby: Jakubowska i Derczyńska po 11 vs Wenezuela.</p>
-<p class='meta' style='margin-top:8px'>Seniorski „gracz 24 h” nie wchodzi: nie było meczu. 14 nazwisk na ME nadal w szufladzie PZPS.</p>
+<p><span class="tag tag-ok">Potwierdzone</span> Numia Vero Volley Milano rozwiązało kontrakt ze Stefano Lavarini za porozumieniem stron. <a href="https://www.verovolley.com/comunicato-ufficiale-risoluzione-consensuale-di-stefano-lavarini-con-numia-vero-volley-milano/">Komunikat klubu 14.08</a>. Z klubem: asystent Mafrici i statystyk Kacper Duda. Następca: Gianlorenzo Blengini. To nie zwolnienie z kadry Polski.</p>
+<p class="item"><span class="tag tag-rum">Plotka / doniesienie</span> Powrót do Fenerbahçe. <a href="https://www.polsatsport.pl/wiadomosc/2026-08-14/stefano-lavarini-rozwiazal-kontrakt-wspolpraca-dobiegla-konca/">Polsat</a> i ANSA piszą, że klub ze Stambułu ogłosił powrót. <a href="https://siatka.org/pokaz/liga-wloska-vero-volley-milano-stefano-lavarini-zwolnienie/">siatka.org</a> nadal traktuje to jako plotkę. Na <a href="https://www.fenerbahce.org/haberler/voleybol-kadin/2023/6/welcome-stefano-lavarini">fenerbahce.org</a> wisi tylko komunikat z czerwca 2023. Do południa 16.08 nie ma świeżego „Welcome” 2026 — nie podnosimy.</p>
+<p class="item"><span class="tag tag-ok">Potwierdzone</span> Loveth Omoruyi (ITA): zerwanie ACL + więzadło poboczne + łąkotka przyśrodkowa, operacja, bez EuroVolley. Kontuzja 12.08 vs Ukraina w Koszalinie. <a href="https://siatka.org/pokaz/kontuzja-omoruyi-memorial-agaty-mroz/">siatka.org</a>.</p>
+<div class="src"><b>Źródła</b>
+<a href="https://www.verovolley.com/comunicato-ufficiale-risoluzione-consensuale-di-stefano-lavarini-con-numia-vero-volley-milano/">Vero Volley</a>
+<a href="https://siatka.org/pokaz/liga-wloska-vero-volley-milano-stefano-lavarini-zwolnienie/">siatka.org Lavarini</a>
+<a href="https://www.polsatsport.pl/wiadomosc/2026-08-14/stefano-lavarini-rozwiazal-kontrakt-wspolpraca-dobiegla-konca/">Polsat Lavarini</a>
+<a href="https://siatka.org/pokaz/kontuzja-omoruyi-memorial-agaty-mroz/">siatka.org Omoruyi</a>
+</div>
 </section>
 </div>
 
-<div class='grid2eq' style='margin-top:12px'>
-<div class='up'>
+<div class="grid2eq" style="margin-top:12px">
+<div class="up">
 <h3>Forma / plusy</h3>
 <ul>
 <li>U17: dwa sweepy z rzędu (VEN, JPN), 75:55 w nocy, cel 9. w zasięgu</li>
 <li>Kontrola I seta z Japonią 25:15 — Polsat: „od początku pod dyktando”</li>
-<li>Seniorki: dwa sweepy w Koszalinie zostają (UKR, FRA); wylot i TV HUN–POL trzymają się</li>
-<li>Plaża: mimo 0 par PL — finały u siebie, Sport 2 od 10:45, slot LA 2028 na stole</li>
+<li>Seniorki: dwa sweepy w Koszalinie zostają (UKR, FRA); wylot 19.08 i TV HUN–POL trzymają się</li>
+<li>Plaża: mimo 0 par PL — finały u siebie, Sport 2 już na antenie, slot LA 2028 na stole</li>
 </ul>
 </div>
-<div class='down'>
+<div class="down">
 <h3>Ryzyka / minusy</h3>
 <ul>
 <li>U17: Tajlandia nadal jedynym meczem o stawkę medalową; DOM ma Mondesi 45 pkt</li>
 <li>Seniorki: 26% ataku i 3 bloki vs Włochy (sportoweswiecie.pl)</li>
-<li>14-osobowa kadra ME nieogłoszona publicznie do rana 16.08 — 3 dni do wylotu</li>
+<li>14-osobowa kadra ME nieogłoszona publicznie do południa 16.08 — 3 dni do wylotu</li>
 <li>Plaża u siebie: 10/10 par poza ME przed 1/8</li>
 </ul>
 </div>
 </div>
 
-<section class='card' style='margin-top:12px'>
+<section class="card" style="margin-top:12px">
 <h2>5 rzeczy na dziś</h2>
-<ol class='five'>
-<li>U17 POL 3:0 JPN (25:15, 25:21, 25:19), 75:55. Polsat + VW + Wikipedia/FIVB. Bez punktów zawodniczek.</li>
+<ol class="five">
+<li>U17 POL 3:0 JPN (25:15, 25:21, 25:19), 75:55, 537. Polsat + VW #27046 + Wikipedia + Flashscore. Bez punktów zawodniczek — ostatnia karta: Jakubowska 11, Derczyńska 11 vs VEN, 14.08.</li>
 <li>Dziś w nocy 00:00 Warszawa: POL–DOM o 9. miejsce. 18:00 Chile. TV niepotwierdzone. Mondesi 45 pkt wczoraj.</li>
 <li>Seniorki bez meczu. EuroVolley za 5 dni, wylot 19.08, HUN 22.08 18:00 Sport 1. Kadra 14: cisza.</li>
-<li>Plaża: zero Polek. Finał kobiet 14:40 Sport 2 / Extra 3 — ESP vs NED. Brąz LAT–FRA 13:25. Półfinały mężczyzn od 10:55.</li>
-<li>Lavarini bez Vero Volley Milano (klub, 14.08). Fenerbahçe = plotka. Omoruyi poza ME Włoch — ACL po Koszalinie.</li>
+<li>Plaża: zero Polek. Sport 2 już przy II SF mężczyzn (12:10). Finał kobiet 14:40 — ESP vs NED. Wyniku I SF SWE–SWE nie publikujemy, bo go nie ma w tekście.</li>
+<li>Lavarini bez Vero Volley Milano (klub, 14.08). Fenerbahçe = doniesienie bez świeżego komunikatu fenerbahce.org. Omoruyi poza ME Włoch — ACL po Koszalinie.</li>
 </ol>
-<div class='pills'>
-<span class='pill'>Mecz dnia: finał plażowy kobiet 14:40</span>
-<span class='pill'>Nocą: U17 POL–DOM 00:00</span>
-<span class='pill'>Odliczanie: 5 dni do ME</span>
-<span class='pill'>Plaża TV: Sport 2 od 10:45</span>
+<div class="pills">
+<span class="pill">Mecz dnia: finał plażowy kobiet 14:40</span>
+<span class="pill">Nocą: U17 POL–DOM 00:00</span>
+<span class="pill">Odliczanie: 5 dni do ME</span>
+<span class="pill">Plaża TV: Sport 2 na żywo</span>
 </div>
 </section>
-<p class='footer'>Raport na 16.08.2026, rano Europe/Warsaw · tylko zweryfikowane fakty · plotki oddzielone od potwierdzeń · productroot.io/siatkowka<br>
-Źródła: <a href='https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye'>Volleyball World</a> · <a href='https://www.polsatsport.pl/wiadomosc/2026-08-15/polska-japonia-wynik-meczu-polskich-siatkarek-kto-wygral-mecz-polska-japonia-u17/'>Polsat U17</a> · <a href='https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship'>Wikipedia / FIVB P2</a> · <a href='https://www.teleman.pl/program-tv/stacje/Polsat-Sport-2?date=2026-08-16'>teleman Sport 2</a> · <a href='https://siatka.org/pokaz/siatkowka-plazowa-mistrzostwa-europy-podsumowanie/'>siatka.org plaża</a> · <a href='https://satkurier.pl/news/252208/mistrzostwa-europy-siatkarek-2026-kiedy-mecze-polek.html'>satkurier</a> · <a href='https://www.pzps.pl/'>PZPS</a></p>
+<p class="footer">Raport na 16.08.2026, południe Europe/Warsaw · tylko zweryfikowane fakty · plotki oddzielone od potwierdzeń · <a href="https://productroot.io/siatkowka/">productroot.io/siatkowka</a><br>
+<a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/news/usa-end-china-s-girls-u17-world-championship-reign-for-final-showdown-with-turkiye">Volleyball World</a>
+· <a href="https://en.volleyballworld.com/volleyball/competitions/girls-u17-world-championship/schedule/27046?match=Poland-vs-Japan">VW #27046</a>
+· <a href="https://www.polsatsport.pl/wiadomosc/2026-08-15/polska-japonia-wynik-meczu-polskich-siatkarek-kto-wygral-mecz-polska-japonia-u17/">Polsat U17</a>
+· <a href="https://en.wikipedia.org/wiki/2026_FIVB_Volleyball_Girls%27_U17_World_Championship">Wikipedia / FIVB P2</a>
+· <a href="https://www.flashscore.com/volleyball/world/world-championship-u17-women/results/">Flashscore</a>
+· <a href="https://www.pzps.pl/">PZPS</a>
+· <a href="https://siatka.org/pokaz/mistrzostwa-swiata-siatkarek-u17-polska-wenezuela-wynik-relacja/">siatka.org POL–VEN</a>
+· <a href="https://www.teleman.pl/program-tv/stacje/Polsat-Sport-2?date=2026-08-16">teleman Sport 2</a>
+· <a href="https://siatka.org/pokaz/siatkowka-plazowa-mistrzostwa-europy-podsumowanie/">siatka.org plaża</a>
+· <a href="https://satkurier.pl/news/252208/mistrzostwa-europy-siatkarek-2026-kiedy-mecze-polek.html">satkurier</a>
+· <a href="https://www.cev.eu/articles/beach-volleyball/world-s-beach-volleyball-elite-to-convene-in-stare-jablonki-for-eurobeachvolley/">CEV</a>
+· <a href="https://www.tauronliga.pl/">tauronliga.pl</a>
+· <a href="https://www.verovolley.com/comunicato-ufficiale-risoluzione-consensuale-di-stefano-lavarini-con-numia-vero-volley-milano/">Vero Volley</a>
+</p>
 </div>
 </body>
 </html>
