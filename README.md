@@ -1,7 +1,8 @@
-# Siatkówka — dzienny raport
+# siatkowka
 
-Live: https://productroot.io/siatkowka/
+Poranny raport siatkówki kobiecej — HTML publikowany codziennie.
 
-Strona stoi na branchu `main` (GitHub Pages). Branch `master` (domyślny na github.com) trzymamy w sync, żeby listing repozytorium nie pokazywał samego README.
-
-Zdjęcia: `img/*.svg` (JPEG w data-URI). Nie commitujemy surowych JPEG/PNG przez GitHub MCP.
+- **Live (GitHub Pages, branch `main`):** https://productroot.github.io/siatkowka/
+- **Archiwum:** folder [`archiwum/`](archiwum/)
+- **Wydanie:** 16.08.2026 — U17 POL 3:0 JPN, boxscore FIVB P-2, finały plaży w Starych Jabłonkach
+- **Zdjęcia:** `img/hero.svg` (celebracja U17, Polsat), `img/u17.svg` (drużyna, siatka.org), `img/grabka.svg` (Alicja Grabka). Slot Piaseckiej zdjęty — brak czystego JPEG.
