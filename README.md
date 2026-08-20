@@ -5,6 +5,6 @@ Poranny raport siatkówki kobiecej — HTML publikowany codziennie.
 - **Live (GitHub Pages, branch `main`):** https://productroot.io/siatkowka/
 - **Mirror:** https://productroot.github.io/siatkowka/
 - **Archiwum:** folder [`archiwum/`](archiwum/)
-- **Wydanie:** 19.08.2026 — wylot seniorek DZIŚ do Stambułu, kadra 14 nadal cisza, HUN–POL 22.08 18:00 Sport 1 (+ Polsat wg siatka); Piasecka Polsat 18.08; BPT Tallin Michalska/Kruczek
-- **Zdjęcia:** `img/hero.svg` (celebracja U17), `img/u17.svg` (drużyna, siatka.org), `img/grabka.svg` (Alicja Grabka). Slot Piaseckiej zdjęty.
+- **Wydanie:** 20.08.2026 — kadra 14 ogłoszona (PZPS 4446), seniorki w Stambule, EuroVolley otwarcie jutro 21.08, HUN–POL 22.08 18:00; Tallin Michalska/Kruczek vs GER
+- **Zdjęcia:** `img/hero.svg` (celebracja U17), `img/u17.svg` (drużyna), `img/grabka.svg` (nr 21, zagrywka Orlen). Slot Piaseckiej zdjęty.
 - Site on `main`; `master` kept in sync.
